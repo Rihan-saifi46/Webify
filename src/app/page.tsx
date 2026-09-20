@@ -26,17 +26,17 @@ export default function HomePage() {
 
         {/* ====================================================== */}
         {/* Realistic 3D Silk Wave / Fluid Ribbon Artwork          */}
-        {/* (Matches the smooth curved organic wave in Img 2)      */}
+        {/* (Full-loop, uncropped, balanced composition)           */}
         {/* ====================================================== */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
           {/* Ambient soft blue atmospheric depth glow in upper-right */}
-          <div className="absolute top-10 sm:top-14 lg:top-16 -right-12 w-[600px] h-[600px] bg-gradient-to-bl from-[#38BDF8]/20 via-[#93C5FD]/15 to-transparent rounded-full blur-[110px] pointer-events-none" />
+          <div className="absolute top-1/4 right-0 sm:right-6 lg:right-12 w-[550px] h-[550px] bg-gradient-to-bl from-[#38BDF8]/20 via-[#93C5FD]/15 to-transparent rounded-full blur-[110px] pointer-events-none" />
 
-          {/* Dimensional Fluid Silk Waves SVG (Shifted downward)    */}
+          {/* Dimensional Fluid Silk Waves SVG (Uncropped, graceful fit) */}
           <svg
-            className="absolute top-12 sm:top-16 lg:top-20 right-0 w-[85%] sm:w-[75%] lg:w-[65%] xl:w-[58%] h-[82%] sm:h-[84%] lg:h-[86%] pointer-events-none"
-            viewBox="0 0 900 800"
-            preserveAspectRatio="xMaxYMid slice"
+            className="absolute top-10 sm:top-14 lg:top-16 right-0 sm:right-4 lg:right-8 xl:right-12 w-[72%] sm:w-[62%] lg:w-[52%] xl:w-[46%] max-w-[850px] h-[75%] sm:h-[80%] lg:h-[84%] pointer-events-none"
+            viewBox="0 0 1000 850"
+            preserveAspectRatio="xMidYMid meet"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -74,21 +74,21 @@ export default function HomePage() {
 
             {/* Layer 1: Ambient background veil spreading across top right */}
             <path
-              d="M 180 0 C 380 180 620 90 920 180 L 920 0 Z"
+              d="M 240 80 C 460 200 690 120 900 200 C 920 300 840 380 720 340 Z"
               fill="url(#silkBackFlow)"
               opacity="0.8"
             />
 
-            {/* Layer 2: Main sweeping background loop */}
+            {/* Layer 2: Main sweeping background loop (Complete, smooth outer contour) */}
             <path
-              d="M 320 0 C 580 80 840 220 860 480 C 880 700 680 720 520 540 C 400 400 320 180 320 0 Z"
+              d="M 380 90 C 640 130 840 240 860 440 C 880 620 720 670 560 560 C 420 450 360 260 380 90 Z"
               fill="url(#silkDeepBlue)"
               opacity="0.75"
             />
 
             {/* Layer 3: Overlapping translucent front fold curl */}
             <path
-              d="M 400 80 C 660 140 850 300 800 520 C 760 680 590 640 480 490 C 380 350 360 180 400 80 Z"
+              d="M 440 140 C 680 180 820 310 780 490 C 740 630 610 590 510 470 C 420 350 400 220 440 140 Z"
               fill="url(#silkFrontPetal)"
               stroke="url(#silkRimLight)"
               strokeWidth="1.25"
@@ -96,7 +96,7 @@ export default function HomePage() {
 
             {/* Layer 4: Delicate luminous wave contours tracing the ribbon curves */}
             <path
-              d="M 280 440 C 460 280 680 320 900 480"
+              d="M 320 460 C 490 320 700 350 880 480"
               fill="none"
               stroke="url(#silkRimLight)"
               strokeWidth="1.5"
@@ -104,14 +104,14 @@ export default function HomePage() {
             />
 
             <path
-              d="M 350 490 C 520 350 740 380 920 540"
+              d="M 380 500 C 540 380 740 400 880 530"
               fill="none"
               stroke="rgba(255, 255, 255, 0.6)"
               strokeWidth="1"
             />
 
             <path
-              d="M 480 200 C 640 250 780 380 760 520"
+              d="M 490 220 C 640 270 760 380 740 500"
               fill="none"
               stroke="rgba(255, 255, 255, 0.85)"
               strokeWidth="1.25"
