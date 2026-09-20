@@ -8,10 +8,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Our Work", href: "#our-work" },
-    { name: "CRM & Extension", href: "#crm-extension" },
-    { name: "WhatsApp Chatbot", href: "#whatsapp-chatbot" },
+    { name: "Services", href: "/#services" },
+    { name: "Our Work", href: "/our-work" },
+    { name: "CRM & Extension", href: "/#crm-extension" },
+    { name: "WhatsApp Chatbot", href: "/#whatsapp-chatbot" },
   ];
 
   return (
