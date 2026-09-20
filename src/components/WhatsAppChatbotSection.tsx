@@ -301,6 +301,8 @@ export default function WhatsAppChatbotSection() {
 
       </div>
 
+    </div>
+
     </section>
   );
 }
