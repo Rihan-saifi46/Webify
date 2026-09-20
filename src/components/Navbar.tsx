@@ -40,13 +40,13 @@ export default function Navbar() {
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-4 lg:gap-6">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="text-xs font-medium text-[#64748B] hover:text-[#0F172A] transition-colors whitespace-nowrap"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </nav>
 
