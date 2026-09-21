@@ -93,7 +93,7 @@ export default function Navbar() {
 
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
@@ -101,7 +101,7 @@ export default function Navbar() {
                 >
                   <span>{link.name}</span>
                   <ArrowUpRight className="w-4 h-4 text-[#64748B]" />
-                </a>
+                </Link>
               ))}
             </nav>
 
