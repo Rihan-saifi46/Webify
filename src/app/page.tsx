@@ -268,7 +268,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <span className="font-brand font-extrabold text-lg text-[#0F172A]">Webify</span>
-            <span className="text-xs text-[#64748B]">© 2026 Webify. All rights reserved.</span>
+            <span className="text-xs text-[#64748B]">© 2026 Webify All rights reserved.</span>
           </div>
 
           <div className="flex items-center gap-6 text-xs text-[#64748B]">
