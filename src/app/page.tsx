@@ -15,10 +15,9 @@ export default function HomePage() {
     <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#7DD3FC]/30 selection:text-[#0F172A] overflow-x-hidden">
       
       {/* ======================================================== */}
-      {/* 1. HERO CANVAS SECTION (Faithfully Replicated from Img 2) */}
+      {/* 1. HERO SECTION (Full Viewport Width, Flush Edges)       */}
       {/* ======================================================== */}
-      <div className="p-3 sm:p-5 lg:p-6 xl:p-8 bg-[#DFE5EC]">
-        <section className="relative w-full max-w-[1440px] mx-auto h-[calc(100vh-1.5rem)] sm:h-[calc(100vh-2.5rem)] lg:h-[calc(100vh-3rem)] min-h-[620px] max-h-[880px] rounded-[24px] sm:rounded-[34px] lg:rounded-[42px] bg-gradient-to-b from-[#FFFFFF] via-[#F9FBFE] to-[#EDF5FC] border border-white/80 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.06)] flex flex-col justify-between p-5 sm:p-8 lg:p-10 xl:p-12 overflow-hidden z-10">
+      <section className="relative w-full min-h-screen lg:h-screen min-h-[620px] bg-gradient-to-b from-[#FFFFFF] via-[#F9FBFE] to-[#EDF5FC] flex flex-col justify-between p-6 sm:p-10 lg:p-12 xl:px-16 overflow-hidden z-10">
           
           {/* ====================================================== */}
           {/* Navbar (Contained Inside Canvas Card at Top)           */}
@@ -190,7 +189,6 @@ export default function HomePage() {
           </div>
 
         </section>
-      </div>
 
       {/* ======================================================== */}
       {/* 2. ABOUT SECTION (Fits Cleanly Within 100vh + Tech Track) */}
