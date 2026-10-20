@@ -8,9 +8,7 @@ import TechCarousel from "../components/TechCarousel";
 import ProjectsShowcase from "../components/ProjectsShowcase";
 import ServicesSection from "../components/ServicesSection";
 import WhatsAppChatbotSection from "../components/WhatsAppChatbotSection";
-import { 
-  ArrowUpRight
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -20,7 +18,7 @@ export default function HomePage() {
       {/* 1. HERO CANVAS SECTION (Faithfully Replicated from Img 2) */}
       {/* ======================================================== */}
       <div className="p-3 sm:p-5 lg:p-6 xl:p-8 bg-[#DFE5EC]">
-        <section className="relative w-full max-w-[1440px] mx-auto h-[calc(100vh-1.5rem)] sm:h-[calc(100vh-2.5rem)] lg:h-[calc(100vh-3rem)] min-h-[620px] max-h-[880px] rounded-[24px] sm:rounded-[34px] lg:rounded-[40px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFD] to-[#EDF5FC] border border-white/80 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.06)] flex flex-col justify-between p-5 sm:p-8 lg:p-10 xl:p-12 overflow-hidden z-10">
+        <section className="relative w-full max-w-[1440px] mx-auto h-[calc(100vh-1.5rem)] sm:h-[calc(100vh-2.5rem)] lg:h-[calc(100vh-3rem)] min-h-[620px] max-h-[880px] rounded-[24px] sm:rounded-[34px] lg:rounded-[42px] bg-gradient-to-b from-[#FFFFFF] via-[#F9FBFE] to-[#EDF5FC] border border-white/80 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.06)] flex flex-col justify-between p-5 sm:p-8 lg:p-10 xl:p-12 overflow-hidden z-10">
           
           {/* ====================================================== */}
           {/* Navbar (Contained Inside Canvas Card at Top)           */}
@@ -28,81 +26,96 @@ export default function HomePage() {
           <Navbar />
 
           {/* ====================================================== */}
-          {/* Soft, Subtle, Low-Contrast Abstract Silk Waves         */}
-          {/* (Blends naturally into white, NO harsh/oversized blues)*/}
+          {/* Realistic 3D Silk Wave / Fluid Ribbon Artwork          */}
+          {/* (Matches the smooth curved organic wave in Img 2)      */}
           {/* ====================================================== */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
-            {/* Ultra-soft ambient watercolor radial glow top right */}
-            <div className="absolute -top-16 -right-16 w-[550px] h-[550px] bg-gradient-to-bl from-[#BAE6FD]/25 via-[#E0F2FE]/15 to-transparent rounded-full blur-[100px] pointer-events-none" />
+            {/* Ambient soft blue atmospheric depth glow in upper-right */}
+            <div className="absolute -top-12 -right-12 w-[600px] h-[600px] bg-gradient-to-bl from-[#38BDF8]/20 via-[#93C5FD]/15 to-transparent rounded-full blur-[110px] pointer-events-none" />
 
-            {/* Delicate Glass-like Flowing Waves SVG */}
+            {/* Dimensional Fluid Silk Waves SVG */}
             <svg
-              className="absolute top-0 right-0 w-[80%] sm:w-[70%] lg:w-[60%] h-full pointer-events-none"
-              viewBox="0 0 850 750"
+              className="absolute top-0 right-0 w-[85%] sm:w-[75%] lg:w-[65%] xl:w-[58%] h-full pointer-events-none"
+              viewBox="0 0 900 800"
               preserveAspectRatio="xMaxYMid slice"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
-                {/* Soft Silk Primary Gradient (Pastel sky blue with smooth fade) */}
-                <linearGradient id="softSilkGrad1" x1="100" y1="20" x2="800" y2="700" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#BAE6FD" stopOpacity="0.45" />
-                  <stop offset="40%" stopColor="#7DD3FC" stopOpacity="0.30" />
-                  <stop offset="80%" stopColor="#E0F2FE" stopOpacity="0.10" />
+                {/* Deep Core Blue Fold Gradient */}
+                <linearGradient id="silkDeepBlue" x1="450" y1="120" x2="850" y2="650" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.55" />
+                  <stop offset="35%" stopColor="#2563EB" stopOpacity="0.45" />
+                  <stop offset="70%" stopColor="#60A5FA" stopOpacity="0.25" />
+                  <stop offset="100%" stopColor="#EFF6FF" stopOpacity="0.0" />
+                </linearGradient>
+
+                {/* Translucent Foreground Petal Gradient */}
+                <linearGradient id="silkFrontPetal" x1="200" y1="50" x2="880" y2="750" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.85" />
+                  <stop offset="30%" stopColor="#BAE6FD" stopOpacity="0.5" />
+                  <stop offset="75%" stopColor="#7DD3FC" stopOpacity="0.25" />
                   <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.0" />
                 </linearGradient>
 
-                {/* Soft Silk Inner Fold Gradient */}
-                <linearGradient id="softSilkGrad2" x1="250" y1="80" x2="750" y2="600" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.75" />
-                  <stop offset="50%" stopColor="#BAE6FD" stopOpacity="0.35" />
+                {/* Background Soft Ambient Flow Gradient */}
+                <linearGradient id="silkBackFlow" x1="100" y1="0" x2="900" y2="600" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.4" />
+                  <stop offset="50%" stopColor="#BAE6FD" stopOpacity="0.25" />
                   <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.0" />
                 </linearGradient>
 
-                {/* Delicate Illuminated Edge Contour */}
-                <linearGradient id="softEdgeContour" x1="150" y1="80" x2="750" y2="550" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
-                  <stop offset="60%" stopColor="#7DD3FC" stopOpacity="0.45" />
-                  <stop offset="100%" stopColor="#BAE6FD" stopOpacity="0.1" />
+                {/* Illuminated Silk Edge Rim Light */}
+                <linearGradient id="silkRimLight" x1="250" y1="50" x2="800" y2="650" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
+                  <stop offset="50%" stopColor="#BAE6FD" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#38BDF8" stopOpacity="0.1" />
                 </linearGradient>
               </defs>
 
-              {/* Layer 1: Background fluid translucent veil */}
+              {/* Layer 1: Ambient background veil spreading across top right */}
               <path
-                d="M 220 -30 C 400 100 650 70 880 150 L 880 -30 Z"
-                fill="url(#softSilkGrad2)"
-                opacity="0.6"
+                d="M 180 0 C 380 180 620 90 920 180 L 920 0 Z"
+                fill="url(#silkBackFlow)"
+                opacity="0.8"
               />
 
-              {/* Layer 2: Main Graceful Silk Wave Loop (Upper Right) */}
+              {/* Layer 2: Main sweeping background loop */}
               <path
-                d="M 380 -40 C 620 40 850 170 830 390 C 810 570 630 550 490 410 C 390 310 350 130 380 -40 Z"
-                fill="url(#softSilkGrad1)"
-                stroke="url(#softEdgeContour)"
+                d="M 320 0 C 580 80 840 220 860 480 C 880 700 680 720 520 540 C 400 400 320 180 320 0 Z"
+                fill="url(#silkDeepBlue)"
+                opacity="0.75"
+              />
+
+              {/* Layer 3: Overlapping translucent front fold curl */}
+              <path
+                d="M 400 80 C 660 140 850 300 800 520 C 760 680 590 640 480 490 C 380 350 360 180 400 80 Z"
+                fill="url(#silkFrontPetal)"
+                stroke="url(#silkRimLight)"
                 strokeWidth="1.25"
               />
 
-              {/* Layer 3: Inner Translucent Fold */}
+              {/* Layer 4: Delicate luminous wave contours tracing the ribbon curves */}
               <path
-                d="M 460 30 C 650 80 810 200 760 390 C 720 490 590 470 510 370 C 440 280 430 150 460 30 Z"
-                fill="url(#softSilkGrad2)"
-                stroke="rgba(255, 255, 255, 0.75)"
+                d="M 280 440 C 460 280 680 320 900 480"
+                fill="none"
+                stroke="url(#silkRimLight)"
+                strokeWidth="1.5"
+                opacity="0.75"
+              />
+
+              <path
+                d="M 350 490 C 520 350 740 380 920 540"
+                fill="none"
+                stroke="rgba(255, 255, 255, 0.6)"
                 strokeWidth="1"
               />
 
-              {/* Layer 4: Sweeping lower contour wave line */}
               <path
-                d="M 200 420 C 390 290 640 310 850 460"
+                d="M 480 200 C 640 250 780 380 760 520"
                 fill="none"
-                stroke="rgba(255, 255, 255, 0.8)"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M 260 460 C 430 350 680 370 880 500"
-                fill="none"
-                stroke="rgba(186, 230, 253, 0.35)"
-                strokeWidth="1"
-                strokeDasharray="4 4"
+                stroke="rgba(255, 255, 255, 0.85)"
+                strokeWidth="1.25"
               />
             </svg>
           </div>
@@ -175,9 +188,6 @@ export default function HomePage() {
               <span>Pan-India</span>
             </div>
           </div>
-
-        </section>
-      </div>
 
         </section>
       </div>
