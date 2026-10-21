@@ -17,126 +17,104 @@ export default function HomePage() {
     <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#7DD3FC]/30 selection:text-[#0F172A] overflow-x-hidden">
       
       {/* ======================================================== */}
-      {/* 1. TOP NAVBAR (Sticky ONLY on Home Page)                 */}
+      {/* 1. HERO CANVAS SECTION (Faithfully Replicated from Img 2) */}
       {/* ======================================================== */}
-      <Navbar />
-
-      {/* ======================================================== */}
-      {/* 1. HERO SECTION (Replicated from Reference Image 2)      */}
-      {/* ======================================================== */}
-      <div className="p-3 sm:p-5 lg:p-7 xl:p-8 bg-[#DFE4EA]">
-        <section className="relative w-full max-w-[1380px] mx-auto h-auto min-h-[calc(100dvh-1.5rem)] sm:min-h-[calc(100dvh-2.5rem)] lg:h-[calc(100vh-3.5rem)] lg:min-h-[640px] lg:max-h-[880px] rounded-[24px] sm:rounded-[36px] lg:rounded-[42px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F6FC] border border-white/90 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08)] flex flex-col justify-between pt-24 sm:pt-28 lg:pt-32 pb-6 sm:pb-8 px-6 sm:px-12 lg:px-16 overflow-hidden z-10">
+      <div className="p-3 sm:p-5 lg:p-6 xl:p-8 bg-[#DFE5EC]">
+        <section className="relative w-full max-w-[1440px] mx-auto h-[calc(100vh-1.5rem)] sm:h-[calc(100vh-2.5rem)] lg:h-[calc(100vh-3rem)] min-h-[620px] max-h-[880px] rounded-[24px] sm:rounded-[34px] lg:rounded-[40px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFD] to-[#EDF5FC] border border-white/80 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.06)] flex flex-col justify-between p-5 sm:p-8 lg:p-10 xl:p-12 overflow-hidden z-10">
           
           {/* ====================================================== */}
-          {/* Soft Abstract Fluid Curves & Ambient Lighting          */}
-          {/* (Faithfully replicates Image 2's silky flowing waves)  */}
+          {/* Navbar (Contained Inside Canvas Card at Top)           */}
+          {/* ====================================================== */}
+          <Navbar />
+
+          {/* ====================================================== */}
+          {/* Soft, Subtle, Low-Contrast Abstract Silk Waves         */}
+          {/* (Blends naturally into white, NO harsh/oversized blues)*/}
           {/* ====================================================== */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
-            {/* Ambient base glows behind waves */}
-            <div className="absolute -top-24 right-[-5%] w-[650px] sm:w-[850px] h-[650px] sm:h-[850px] bg-gradient-to-bl from-[#38BDF8]/35 via-[#60A5FA]/20 to-transparent rounded-full blur-[110px] pointer-events-none" />
-            <div className="absolute top-1/4 right-[5%] w-[520px] h-[520px] bg-gradient-to-tr from-[#BAE6FD]/40 via-[#E0F2FE]/25 to-transparent rounded-full blur-[85px] pointer-events-none" />
+            {/* Ultra-soft ambient watercolor radial glow top right */}
+            <div className="absolute -top-16 -right-16 w-[550px] h-[550px] bg-gradient-to-bl from-[#BAE6FD]/25 via-[#E0F2FE]/15 to-transparent rounded-full blur-[100px] pointer-events-none" />
 
-            {/* High-Fidelity Flowing Wave Ribbons SVG */}
+            {/* Delicate Glass-like Flowing Waves SVG */}
             <svg
-              className="absolute top-0 right-0 w-[88%] sm:w-[78%] lg:w-[68%] h-full pointer-events-none"
-              viewBox="0 0 920 800"
+              className="absolute top-0 right-0 w-[80%] sm:w-[70%] lg:w-[60%] h-full pointer-events-none"
+              viewBox="0 0 850 750"
               preserveAspectRatio="xMaxYMid slice"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
-                {/* Primary Deep Sky Ribbon Gradient */}
-                <linearGradient id="primaryWaveGrad" x1="150" y1="50" x2="880" y2="720" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.45" />
-                  <stop offset="35%" stopColor="#0284C7" stopOpacity="0.55" />
-                  <stop offset="70%" stopColor="#60A5FA" stopOpacity="0.30" />
-                  <stop offset="100%" stopColor="#BAE6FD" stopOpacity="0.08" />
+                {/* Soft Silk Primary Gradient (Pastel sky blue with smooth fade) */}
+                <linearGradient id="softSilkGrad1" x1="100" y1="20" x2="800" y2="700" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#BAE6FD" stopOpacity="0.45" />
+                  <stop offset="40%" stopColor="#7DD3FC" stopOpacity="0.30" />
+                  <stop offset="80%" stopColor="#E0F2FE" stopOpacity="0.10" />
+                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.0" />
                 </linearGradient>
 
-                {/* Secondary Inner Silk Fold Gradient */}
-                <linearGradient id="innerWaveGrad" x1="300" y1="100" x2="820" y2="600" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.80" />
-                  <stop offset="45%" stopColor="#BAE6FD" stopOpacity="0.50" />
-                  <stop offset="90%" stopColor="#38BDF8" stopOpacity="0.25" />
+                {/* Soft Silk Inner Fold Gradient */}
+                <linearGradient id="softSilkGrad2" x1="250" y1="80" x2="750" y2="600" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.75" />
+                  <stop offset="50%" stopColor="#BAE6FD" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.0" />
                 </linearGradient>
 
-                {/* Subtle Backdrop Silk Veil */}
-                <linearGradient id="softBackdropGrad" x1="100" y1="0" x2="700" y2="700" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#BAE6FD" stopOpacity="0.32" />
-                  <stop offset="60%" stopColor="#E0F2FE" stopOpacity="0.15" />
-                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
-                </linearGradient>
-
-                {/* Luminous Edge Stroke Gradient */}
-                <linearGradient id="edgeStrokeGrad1" x1="200" y1="100" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+                {/* Delicate Illuminated Edge Contour */}
+                <linearGradient id="softEdgeContour" x1="150" y1="80" x2="750" y2="550" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
-                  <stop offset="50%" stopColor="#7DD3FC" stopOpacity="0.75" />
-                  <stop offset="100%" stopColor="#0284C7" stopOpacity="0.2" />
-                </linearGradient>
-
-                <linearGradient id="edgeStrokeGrad2" x1="350" y1="150" x2="750" y2="550" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.85" />
-                  <stop offset="60%" stopColor="#38BDF8" stopOpacity="0.5" />
+                  <stop offset="60%" stopColor="#7DD3FC" stopOpacity="0.45" />
                   <stop offset="100%" stopColor="#BAE6FD" stopOpacity="0.1" />
                 </linearGradient>
               </defs>
 
-              {/* Layer 1: Wide background fluid veil */}
+              {/* Layer 1: Background fluid translucent veil */}
               <path
-                d="M 250 -50 C 450 120 700 80 950 180 L 950 -50 Z"
-                fill="url(#softBackdropGrad)"
+                d="M 220 -30 C 400 100 650 70 880 150 L 880 -30 Z"
+                fill="url(#softSilkGrad2)"
+                opacity="0.6"
               />
 
-              {/* Layer 2: Major Translucent Ribbon Loop (Orbital arch flowing across upper right) */}
+              {/* Layer 2: Main Graceful Silk Wave Loop (Upper Right) */}
               <path
-                d="M 450 -50 C 700 30 920 180 900 420 C 880 620 680 600 520 450 C 400 330 380 140 450 -50 Z"
-                fill="url(#primaryWaveGrad)"
-                stroke="url(#edgeStrokeGrad1)"
+                d="M 380 -40 C 620 40 850 170 830 390 C 810 570 630 550 490 410 C 390 310 350 130 380 -40 Z"
+                fill="url(#softSilkGrad1)"
+                stroke="url(#softEdgeContour)"
+                strokeWidth="1.25"
+              />
+
+              {/* Layer 3: Inner Translucent Fold */}
+              <path
+                d="M 460 30 C 650 80 810 200 760 390 C 720 490 590 470 510 370 C 440 280 430 150 460 30 Z"
+                fill="url(#softSilkGrad2)"
+                stroke="rgba(255, 255, 255, 0.75)"
+                strokeWidth="1"
+              />
+
+              {/* Layer 4: Sweeping lower contour wave line */}
+              <path
+                d="M 200 420 C 390 290 640 310 850 460"
+                fill="none"
+                stroke="rgba(255, 255, 255, 0.8)"
                 strokeWidth="1.5"
               />
-
-              {/* Layer 3: Nested Inner Fold Wave (Multi-layered glass translucency) */}
               <path
-                d="M 540 40 C 740 90 910 220 860 440 C 820 560 670 540 560 410 C 480 310 470 170 540 40 Z"
-                fill="url(#innerWaveGrad)"
-                stroke="url(#edgeStrokeGrad2)"
-                strokeWidth="1.2"
-              />
-
-              {/* Layer 4: Sweeping lower contour arcs */}
-              <path
-                d="M 220 460 C 420 320 680 340 920 520"
+                d="M 260 460 C 430 350 680 370 880 500"
                 fill="none"
-                stroke="rgba(255, 255, 255, 0.85)"
-                strokeWidth="1.75"
-              />
-              <path
-                d="M 280 500 C 460 380 720 400 950 560"
-                fill="none"
-                stroke="rgba(56, 189, 248, 0.35)"
+                stroke="rgba(186, 230, 253, 0.35)"
                 strokeWidth="1"
                 strokeDasharray="4 4"
-              />
-
-              {/* Layer 5: Subtle upper orbital whisper line */}
-              <path
-                d="M 380 120 C 580 40 820 120 920 280"
-                fill="none"
-                stroke="rgba(255, 255, 255, 0.6)"
-                strokeWidth="1"
               />
             </svg>
           </div>
 
           {/* ====================================================== */}
           {/* Hero Content (Positioned in Lower-Left / Middle)       */}
-          {/* Matches Image 2's Exact Placement and Proportions      */}
           {/* ====================================================== */}
           <motion.div 
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-full max-w-2xl lg:max-w-[680px] my-auto py-4 sm:py-6 select-none"
+            className="relative z-10 w-full max-w-2xl lg:max-w-[660px] my-auto py-2 sm:py-4 select-none"
           >
             {/* Left-Aligned Main Heading */}
             <div className="space-y-2">
@@ -150,11 +128,11 @@ export default function HomePage() {
             </div>
 
             {/* Description (Directly below heading) */}
-            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
+            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-[#64748B] leading-relaxed max-w-lg font-normal">
               Live in about a week. Built to turn visitors into calls, bookings, and customers, with hosting, updates, and support handled every month.
             </p>
 
-            {/* Dual CTA Buttons (Matching Image 2) */}
+            {/* Dual CTA Buttons (Matching Reference Image 2) */}
             <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3.5">
               {/* Primary CTA: Glowing Rich Blue Pill Button */}
               <a
@@ -197,6 +175,9 @@ export default function HomePage() {
               <span>Pan-India</span>
             </div>
           </div>
+
+        </section>
+      </div>
 
         </section>
       </div>
