@@ -7,10 +7,9 @@ import Navbar from "../components/Navbar";
 import TechCarousel from "../components/TechCarousel";
 import ProjectsShowcase from "../components/ProjectsShowcase";
 import ServicesSection from "../components/ServicesSection";
+import WhatsAppChatbotSection from "../components/WhatsAppChatbotSection";
 import { 
-  ArrowRight, 
-  ArrowUpRight,
-  Zap 
+  ArrowUpRight
 } from "lucide-react";
 
 export default function HomePage() {
@@ -290,82 +289,9 @@ export default function HomePage() {
       <ServicesSection />
 
       {/* ======================================================== */}
-      {/* 5. WHATSAPP & CRM FEATURE HIGHLIGHT (#crm-extension)     */}
+      {/* 5. WHATSAPP CHATBOT SECTION (Matches Approved Reference)  */}
       {/* ======================================================== */}
-      <section id="crm-extension" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div id="whatsapp-chatbot" className="glass-card rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-xl relative overflow-hidden">
-          
-          {/* Subtle sky background accent */}
-          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-gradient-to-tl from-[#BAE6FD]/30 to-transparent rounded-full blur-2xl pointer-events-none" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0284C7] bg-[#E0F2FE] border border-[#BAE6FD]">
-                <Zap className="w-3.5 h-3.5 text-[#0284C7]" />
-                <span>Instant Customer Conversion</span>
-              </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-                Turn Every WhatsApp Inquiry into a Confirmed Paying Customer
-              </h2>
-              <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
-                Our custom WhatsApp bot and CRM extension instantly answers client queries, shares pricing and catalogs, and sends automatic follow-ups while you focus on running your business.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded-2xl bg-white/80 border border-slate-200/80">
-                  <p className="text-xs font-bold text-[#0F172A]">Instant 24/7 Response</p>
-                  <p className="text-xs text-[#64748B] mt-1">Never lose a prospect who messages after showroom hours.</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-white/80 border border-slate-200/80">
-                  <p className="text-xs font-bold text-[#0F172A]">Automated Follow-ups</p>
-                  <p className="text-xs text-[#64748B] mt-1">Nurture pending leads with zero manual typing.</p>
-                </div>
-              </div>
-
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <a
-                  href="https://wa.me/918178557544?text=Hello%20Webify%2C%20show%20me%20a%20live%20WhatsApp%20bot%20demo."
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs sm:text-sm font-semibold shadow-md transition-all"
-                >
-                  <span>Test WhatsApp Demo Bot</span>
-                  <ArrowRight className="w-4 h-4 text-[#7DD3FC]" />
-                </a>
-              </div>
-            </div>
-
-            {/* Interactive Bot Mock Preview Card */}
-            <div className="lg:col-span-5">
-              <div className="rounded-2xl bg-white p-5 border border-slate-200 shadow-md space-y-4">
-                <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center font-bold text-xs">
-                    WA
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-[#0F172A]">Webify Bot Assistant</p>
-                    <p className="text-[10px] text-emerald-600 font-medium">● Online 24/7</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3 text-xs">
-                  <div className="p-3 rounded-2xl rounded-tl-none bg-slate-100 text-[#0F172A] max-w-[85%]">
-                    Namaste! Welcome to Webify. How can we assist your business today?
-                  </div>
-                  <div className="p-3 rounded-2xl rounded-tr-none bg-[#E0F2FE] text-[#0284C7] font-medium ml-auto max-w-[85%] text-right">
-                    I need a modern website and WhatsApp automated booking.
-                  </div>
-                  <div className="p-3 rounded-2xl rounded-tl-none bg-slate-100 text-[#0F172A] max-w-[85%] space-y-2">
-                    <p>Awesome! We launch high-converting websites in ~5 days with full domain &amp; source code ownership.</p>
-                    <p className="text-[11px] font-semibold text-[#0284C7]">Would you like to review our client portfolio?</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <WhatsAppChatbotSection />
 
       {/* ======================================================== */}
       {/* 6. MINIMAL FOOTER                                        */}
