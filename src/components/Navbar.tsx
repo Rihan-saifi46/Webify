@@ -38,11 +38,11 @@ export default function Navbar() {
   return (
     <>
       <header 
-        className={`fixed top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-8 pointer-events-none transition-all duration-300 ease-out ${
+        className={`fixed top-5 sm:top-7 lg:top-8 left-0 right-0 z-50 flex justify-center px-5 sm:px-9 lg:px-12 pointer-events-none transition-all duration-300 ease-out ${
           shouldHide ? "opacity-0 -translate-y-6 pointer-events-none" : "opacity-100 translate-y-0"
         }`}
       >
-        <div className="w-full max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
+        <div className="w-full max-w-[1380px] mx-auto flex items-center justify-between pointer-events-auto">
           
           {/* ========================================================= */}
           {/* LEFT: Webify Logo / Brand Anchor (Visible on Home Page)   */}
