@@ -201,9 +201,6 @@ export default function HomePage() {
         </section>
       </div>
 
-        </section>
-      </div>
-
       {/* ======================================================== */}
       {/* 2. ABOUT SECTION (Fits Cleanly Within 100vh + Tech Track) */}
       {/* ======================================================== */}
