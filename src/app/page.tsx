@@ -22,19 +22,19 @@ export default function HomePage() {
       <Navbar />
 
       {/* ======================================================== */}
-      {/* 1. HERO SECTION (100vh Premium Canvas Design Reference)  */}
+      {/* 1. HERO SECTION (Replicated from Reference Image 2)      */}
       {/* ======================================================== */}
-      <div className="p-2 sm:p-3.5 lg:p-4.5 bg-[#EAEEF4]">
-        <section className="relative h-auto min-h-[calc(100dvh-1rem)] sm:min-h-[calc(100dvh-1.75rem)] lg:h-[calc(100vh-2.25rem)] lg:max-h-[100dvh] rounded-[22px] sm:rounded-[30px] lg:rounded-[36px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F6FC] border border-slate-200/80 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.06)] flex flex-col justify-between pt-20 sm:pt-24 lg:pt-28 pb-5 sm:pb-6 px-5 sm:px-10 lg:px-16 overflow-hidden z-10">
+      <div className="p-3 sm:p-5 lg:p-7 xl:p-8 bg-[#DFE4EA]">
+        <section className="relative w-full max-w-[1380px] mx-auto h-auto min-h-[calc(100dvh-1.5rem)] sm:min-h-[calc(100dvh-2.5rem)] lg:h-[calc(100vh-3.5rem)] lg:min-h-[640px] lg:max-h-[880px] rounded-[24px] sm:rounded-[36px] lg:rounded-[42px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F6FC] border border-white/90 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08)] flex flex-col justify-between pt-24 sm:pt-28 lg:pt-32 pb-6 sm:pb-8 px-6 sm:px-12 lg:px-16 overflow-hidden z-10">
           
           {/* ====================================================== */}
           {/* Soft Abstract Fluid Curves & Ambient Lighting          */}
-          {/* (Faithfully matches the approved Pinstack reference)   */}
+          {/* (Faithfully replicates Image 2's silky flowing waves)  */}
           {/* ====================================================== */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
             {/* Ambient base glows behind waves */}
-            <div className="absolute -top-24 right-[-10%] w-[650px] sm:w-[850px] h-[650px] sm:h-[850px] bg-gradient-to-bl from-[#38BDF8]/35 via-[#60A5FA]/20 to-transparent rounded-full blur-[110px] pointer-events-none" />
-            <div className="absolute top-1/4 right-[8%] w-[520px] h-[520px] bg-gradient-to-tr from-[#BAE6FD]/40 via-[#E0F2FE]/25 to-transparent rounded-full blur-[85px] pointer-events-none" />
+            <div className="absolute -top-24 right-[-5%] w-[650px] sm:w-[850px] h-[650px] sm:h-[850px] bg-gradient-to-bl from-[#38BDF8]/35 via-[#60A5FA]/20 to-transparent rounded-full blur-[110px] pointer-events-none" />
+            <div className="absolute top-1/4 right-[5%] w-[520px] h-[520px] bg-gradient-to-tr from-[#BAE6FD]/40 via-[#E0F2FE]/25 to-transparent rounded-full blur-[85px] pointer-events-none" />
 
             {/* High-Fidelity Flowing Wave Ribbons SVG */}
             <svg
@@ -129,79 +129,58 @@ export default function HomePage() {
           </div>
 
           {/* ====================================================== */}
-          {/* Central Hero Composition (Balanced Baseline Alignment) */}
+          {/* Hero Content (Positioned in Lower-Left / Middle)       */}
+          {/* Matches Image 2's Exact Placement and Proportions      */}
           {/* ====================================================== */}
           <motion.div 
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-full max-w-7xl mx-auto my-auto py-2 sm:py-4"
+            className="relative z-10 w-full max-w-2xl lg:max-w-[680px] my-auto py-4 sm:py-6 select-none"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-              
-              {/* ---------------------------------------------------- */}
-              {/* LEFT SIDE: Brand Typography ("Webify" - Clean Anchor)*/}
-              {/* ---------------------------------------------------- */}
-              <div className="lg:col-span-5 flex flex-col justify-end select-none">
-                <div className="relative">
-                  <h1 className="relative font-brand text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.75rem] font-extrabold tracking-[-0.04em] text-[#0F172A] leading-[0.9] transition-all">
-                    Webify
-                  </h1>
-                </div>
-              </div>
+            {/* Left-Aligned Main Heading */}
+            <div className="space-y-2">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.85rem] font-bold text-[#0F172A] tracking-[-0.03em] leading-[1.12]">
+                Websites &amp; AI chatbots{" "}
+                <br className="hidden sm:inline" />
+                <span className="font-serif italic font-normal text-[#0284C7]">
+                  for local businesses.
+                </span>
+              </h1>
+            </div>
 
-              {/* ---------------------------------------------------- */}
-              {/* RIGHT SIDE: Hero Content & Dual CTA Buttons          */}
-              {/* ---------------------------------------------------- */}
-              <div className="lg:col-span-7 flex flex-col justify-end space-y-3.5 sm:space-y-4 lg:space-y-5 pb-1">
-                
-                {/* Main Heading */}
-                <div className="space-y-2">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.4rem] xl:text-[2.9rem] font-bold text-[#0F172A] tracking-tight leading-[1.18]">
-                    Websites &amp; AI chatbots{" "}
-                    <br className="hidden sm:inline" />
-                    <span className="font-serif italic font-normal text-[#0284C7]">
-                      for local businesses.
-                    </span>
-                  </h2>
-                </div>
+            {/* Description (Directly below heading) */}
+            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
+              Live in about a week. Built to turn visitors into calls, bookings, and customers, with hosting, updates, and support handled every month.
+            </p>
 
-                {/* Description */}
-                <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
-                  Live in about a week. Built to turn visitors into calls, bookings, and customers, with hosting, updates, and support handled every month.
-                </p>
+            {/* Dual CTA Buttons (Matching Image 2) */}
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3.5">
+              {/* Primary CTA: Glowing Rich Blue Pill Button */}
+              <a
+                href="https://wa.me/918178557544?text=Hello%20Webify%2C%20I%20would%20like%20to%20start%20a%20new%20project%20for%20my%20business."
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-[#0284C7] to-[#2563EB] hover:from-[#0369A1] hover:to-[#1D4ED8] text-white font-semibold text-xs sm:text-sm shadow-[0_8px_20px_rgba(2,132,199,0.38)] hover:shadow-[0_12px_28px_rgba(2,132,199,0.48)] hover:scale-[1.02] active:scale-[0.98] transition-all"
+              >
+                <span>Start a Project</span>
+                <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
 
-                {/* Dual CTA Buttons (Matching Reference Design) */}
-                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-                  {/* Primary CTA: Glowing Rich Blue Pill Button */}
-                  <a
-                    href="https://wa.me/918178557544?text=Hello%20Webify%2C%20I%20would%20like%20to%20start%20a%20new%20project%20for%20my%20business."
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#0284C7] to-[#2563EB] hover:from-[#0369A1] hover:to-[#1D4ED8] text-white font-semibold text-xs sm:text-sm shadow-[0_8px_24px_rgba(2,132,199,0.35)] hover:shadow-[0_12px_28px_rgba(2,132,199,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all"
-                  >
-                    <span>Start a Project</span>
-                    <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </a>
-
-                  {/* Secondary CTA: Clean White/Translucent Pill Button */}
-                  <a
-                    href="#our-work"
-                    className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-white/90 hover:bg-white text-[#0F172A] border border-slate-200/90 hover:border-slate-300 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
-                  >
-                    <span>See Our Work</span>
-                  </a>
-                </div>
-
-              </div>
-
+              {/* Secondary CTA: Clean White/Translucent Pill Button */}
+              <a
+                href="#our-work"
+                className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0F172A] border border-slate-200/90 hover:border-slate-300 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
+              >
+                <span>See Our Work</span>
+              </a>
             </div>
           </motion.div>
 
           {/* ====================================================== */}
-          {/* Subtle bottom divider & presence line                   */}
+          {/* Subtle bottom divider & presence line (Matching Img 2) */}
           {/* ====================================================== */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto pt-3 border-t border-slate-200/60 flex flex-col sm:flex-row items-center justify-between text-xs text-[#94A3B8] gap-2">
+          <div className="relative z-10 w-full pt-4 border-t border-slate-200/60 flex flex-col sm:flex-row items-center justify-between text-xs text-[#94A3B8] gap-2 select-none">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="font-medium text-[#64748B]">Ready for New Projects</span>
@@ -218,6 +197,9 @@ export default function HomePage() {
               <span>Pan-India</span>
             </div>
           </div>
+
+        </section>
+      </div>
 
         </section>
       </div>
