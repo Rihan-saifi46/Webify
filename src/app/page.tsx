@@ -6,14 +6,9 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import TechCarousel from "../components/TechCarousel";
 import ProjectsShowcase from "../components/ProjectsShowcase";
+import ServicesSection from "../components/ServicesSection";
 import { 
   ArrowRight, 
-  ArrowUpRight, 
-  CheckCircle2, 
-  MessageSquare, 
-  Smartphone, 
-  Database, 
-  Sparkles, 
   Zap 
 } from "lucide-react";
 
@@ -195,105 +190,9 @@ export default function HomePage() {
       <ProjectsShowcase />
 
       {/* ======================================================== */}
-      {/* 4. CORE SERVICES PREVIEW SECTION (#services)             */}
+      {/* 4. SERVICES SECTION (Matches Approved Visual Design)     */}
       {/* ======================================================== */}
-      <section id="services" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0284C7] bg-[#E0F2FE] border border-[#BAE6FD]">
-            <Sparkles className="w-3.5 h-3.5 text-[#0284C7]" />
-            <span>Digital Capabilities</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-            Everything You Need to Modernize &amp; Grow
-          </h2>
-          <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
-            Tailored digital solutions engineered specifically for retailers, manufacturers, clinics, and local enterprises.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {/* Service Card 1 */}
-          <div className="glass-card rounded-3xl p-7 border border-slate-200/90 hover:border-[#38BDF8]/60 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Smartphone className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A]">High-Speed Mobile Websites</h3>
-              <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                Next.js ultra-fast mobile storefronts with 99+ Google PageSpeed, instant lead capture, and Google Maps local SEO.
-              </p>
-            </div>
-            <ul className="space-y-2 text-xs text-[#0F172A] pt-4 border-t border-slate-100">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Next.js App Router &amp; Tailwind CSS</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Google Maps Profile Ranking</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Domain &amp; Cloud Hosting Included</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Service Card 2 */}
-          <div className="glass-card rounded-3xl p-7 border border-slate-200/90 hover:border-[#38BDF8]/60 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center group-hover:scale-110 transition-transform">
-                <MessageSquare className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A]">24/7 WhatsApp Chatbots</h3>
-              <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                Automate inquiries, send instant product catalogs, book appointments, and dispatch auto-replies directly on WhatsApp.
-              </p>
-            </div>
-            <ul className="space-y-2 text-xs text-[#0F172A] pt-4 border-t border-slate-100">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Instant Auto-Reply Under 15 Seconds</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Digital Catalog &amp; PDF Delivery</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Zero Server Latency</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Service Card 3 */}
-          <div className="glass-card rounded-3xl p-7 border border-slate-200/90 hover:border-[#38BDF8]/60 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Database className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-[#0F172A]">Custom CRM &amp; ERP Software</h3>
-              <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                Bespoke operations software with automated GST billing, live stock tracking, customer records, and staff management.
-              </p>
-            </div>
-            <ul className="space-y-2 text-xs text-[#0F172A] pt-4 border-t border-slate-100">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Automated WhatsApp GST Invoicing</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Real-Time Inventory &amp; Stock Audit</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Role-Based Staff Access</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <ServicesSection />
 
       {/* ======================================================== */}
       {/* 5. WHATSAPP & CRM FEATURE HIGHLIGHT (#crm-extension)     */}
