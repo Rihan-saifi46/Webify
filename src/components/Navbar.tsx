@@ -30,7 +30,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Services", href: "#services" },
-    { name: "Projects", href: "#our-work" },
+    { name: "Our Work", href: "#our-work" },
     { name: "CRM & Extension", href: "#crm-extension" },
     { name: "WhatsApp Chatbot", href: "#whatsapp-chatbot" },
   ];
@@ -57,7 +57,6 @@ export default function Navbar() {
                 <span className="font-extrabold text-sm sm:text-base tracking-tighter text-[#38BDF8]">
                   W
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#7DD3FC] ml-0.5 animate-pulse" />
               </div>
               
               <div className="flex items-baseline">
@@ -73,7 +72,7 @@ export default function Navbar() {
           {/* (Not globally sticky, only visible on Home Page)          */}
           {/* ========================================================= */}
           <div className="hidden lg:flex items-center justify-center">
-            <nav className="glass-pill px-2.5 py-1.5 rounded-full flex items-center gap-1 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] border border-slate-200/90 hover:border-slate-300 transition-all">
+            <nav className="glass-pill px-3 py-1.5 rounded-full flex items-center gap-1 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] border border-slate-200/90 hover:border-slate-300 transition-all bg-white/75 backdrop-blur-xl">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -94,12 +93,10 @@ export default function Navbar() {
               href="https://wa.me/918178557544?text=Hello%20Webify%2C%20I%20would%20like%20to%20start%20a%20new%20project%20for%20my%20business."
               target="_blank"
               rel="noreferrer"
-              className="group hidden sm:inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs sm:text-sm font-semibold shadow-md shadow-slate-900/15 hover:shadow-lg hover:shadow-slate-900/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+              className="group hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0284C7] to-[#2563EB] hover:from-[#0369A1] hover:to-[#1D4ED8] text-white text-xs sm:text-sm font-semibold shadow-[0_6px_20px_rgba(2,132,199,0.35)] hover:shadow-[0_8px_25px_rgba(2,132,199,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
               <span>Start a Project</span>
-              <span className="w-5 h-5 rounded-full bg-white/15 text-[#7DD3FC] flex items-center justify-center text-xs group-hover:translate-x-0.5 group-hover:bg-[#38BDF8] group-hover:text-[#0F172A] transition-all">
-                →
-              </span>
+              <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
 
             {/* Mobile / Tablet Menu Button */}
@@ -146,12 +143,10 @@ export default function Navbar() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-full bg-[#0F172A] text-white text-sm font-semibold shadow-md active:scale-95 transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-gradient-to-r from-[#0284C7] to-[#2563EB] text-white text-sm font-semibold shadow-[0_6px_20px_rgba(2,132,199,0.35)] active:scale-95 transition-all"
               >
                 <span>Start a Project</span>
-                <span className="w-5 h-5 rounded-full bg-white/15 text-[#7DD3FC] flex items-center justify-center text-xs">
-                  →
-                </span>
+                <ArrowUpRight className="w-4 h-4 text-white" />
               </a>
             </div>
           </div>

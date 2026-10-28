@@ -9,6 +9,7 @@ import ProjectsShowcase from "../components/ProjectsShowcase";
 import ServicesSection from "../components/ServicesSection";
 import { 
   ArrowRight, 
+  ArrowUpRight,
   Zap 
 } from "lucide-react";
 
@@ -22,111 +23,205 @@ export default function HomePage() {
       <Navbar />
 
       {/* ======================================================== */}
-      {/* 1. HERO SECTION (Exactly 100vh Full Viewport Height)      */}
+      {/* 1. HERO SECTION (100vh Premium Canvas Design Reference)  */}
       {/* ======================================================== */}
-      <section className="relative h-screen min-h-[100dvh] max-h-[100dvh] flex flex-col justify-between pt-20 sm:pt-24 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-14 overflow-hidden z-10 bg-[#F8FAFC]">
-        
-        {/* Soft Ambient Hero Background (Original Sky Blue & Slate Theme) */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Subtle architectural dot grid */}
-          <div className="absolute inset-0 bg-grid-pattern opacity-40" />
+      <div className="p-2 sm:p-3.5 lg:p-4.5 bg-[#EAEEF4]">
+        <section className="relative h-[calc(100vh-1rem)] sm:h-[calc(100vh-1.75rem)] lg:h-[calc(100vh-2.25rem)] min-h-[620px] max-h-[100dvh] rounded-[22px] sm:rounded-[30px] lg:rounded-[36px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F6FC] border border-slate-200/80 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.06)] flex flex-col justify-between pt-20 sm:pt-24 lg:pt-28 pb-5 sm:pb-7 px-6 sm:px-10 lg:px-16 overflow-hidden z-10">
+          
+          {/* ====================================================== */}
+          {/* Soft Abstract Fluid Curves & Ambient Lighting          */}
+          {/* (Faithfully matches the approved Pinstack reference)   */}
+          {/* ====================================================== */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+            {/* Ambient base glows behind waves */}
+            <div className="absolute -top-24 right-[-10%] w-[650px] sm:w-[850px] h-[650px] sm:h-[850px] bg-gradient-to-bl from-[#38BDF8]/35 via-[#60A5FA]/20 to-transparent rounded-full blur-[110px] pointer-events-none" />
+            <div className="absolute top-1/4 right-[8%] w-[520px] h-[520px] bg-gradient-to-tr from-[#BAE6FD]/40 via-[#E0F2FE]/25 to-transparent rounded-full blur-[85px] pointer-events-none" />
 
-          {/* Soft ambient sky-blue radial glow top right */}
-          <div className="absolute -top-24 right-0 w-[550px] sm:w-[700px] h-[550px] sm:h-[700px] bg-gradient-to-bl from-[#BAE6FD]/40 via-[#E0F2FE]/30 to-transparent rounded-full blur-3xl animate-ambient-glow" />
+            {/* High-Fidelity Flowing Wave Ribbons SVG */}
+            <svg
+              className="absolute top-0 right-0 w-[88%] sm:w-[78%] lg:w-[68%] h-full pointer-events-none"
+              viewBox="0 0 920 800"
+              preserveAspectRatio="xMaxYMid slice"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                {/* Primary Deep Sky Ribbon Gradient */}
+                <linearGradient id="primaryWaveGrad" x1="150" y1="50" x2="880" y2="720" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.45" />
+                  <stop offset="35%" stopColor="#0284C7" stopOpacity="0.55" />
+                  <stop offset="70%" stopColor="#60A5FA" stopOpacity="0.30" />
+                  <stop offset="100%" stopColor="#BAE6FD" stopOpacity="0.08" />
+                </linearGradient>
 
-          {/* Gentle secondary light glow bottom left behind brand typography */}
-          <div className="absolute bottom-0 left-[-10%] w-[500px] h-[400px] bg-gradient-to-tr from-[#7DD3FC]/20 via-[#38BDF8]/10 to-transparent rounded-full blur-3xl" />
+                {/* Secondary Inner Silk Fold Gradient */}
+                <linearGradient id="innerWaveGrad" x1="300" y1="100" x2="820" y2="600" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.80" />
+                  <stop offset="45%" stopColor="#BAE6FD" stopOpacity="0.50" />
+                  <stop offset="90%" stopColor="#38BDF8" stopOpacity="0.25" />
+                </linearGradient>
 
-          {/* Minimal vector accent curve (Modern SaaS / Architectural aesthetic) */}
-          <svg 
-            className="absolute top-1/4 right-0 w-full max-w-4xl h-[420px] stroke-[#38BDF8]/20 fill-none opacity-60" 
-            viewBox="0 0 800 400" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path 
-              d="M0,200 C300,120 450,280 800,160" 
-              strokeWidth="1.5" 
-              strokeDasharray="6 6"
-            />
-            <path 
-              d="M0,240 C320,160 480,320 800,200" 
-              strokeWidth="1" 
-              strokeOpacity="0.6"
-            />
-          </svg>
-        </div>
+                {/* Subtle Backdrop Silk Veil */}
+                <linearGradient id="softBackdropGrad" x1="100" y1="0" x2="700" y2="700" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#BAE6FD" stopOpacity="0.32" />
+                  <stop offset="60%" stopColor="#E0F2FE" stopOpacity="0.15" />
+                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
+                </linearGradient>
 
-        {/* Central Hero Composition (Balanced Baseline Alignment) */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto my-auto py-2 sm:py-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-            
-            {/* ------------------------------------------------------ */}
-            {/* LEFT SIDE: Brand Typography ("Webify" - Clean Anchor)  */}
-            {/* ------------------------------------------------------ */}
-            <div className="lg:col-span-6 flex flex-col justify-end select-none">
-              <div className="relative">
-                {/* Subtle soft backdrop accent */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-sky-100/30 to-transparent rounded-3xl blur-2xl pointer-events-none" />
+                {/* Luminous Edge Stroke Gradient */}
+                <linearGradient id="edgeStrokeGrad1" x1="200" y1="100" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
+                  <stop offset="50%" stopColor="#7DD3FC" stopOpacity="0.75" />
+                  <stop offset="100%" stopColor="#0284C7" stopOpacity="0.2" />
+                </linearGradient>
 
-                <h1 className="relative font-brand text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[8.5rem] font-extrabold tracking-[-0.04em] text-[#0F172A] leading-[0.88] transition-all">
-                  Webify
-                </h1>
-              </div>
-            </div>
+                <linearGradient id="edgeStrokeGrad2" x1="350" y1="150" x2="750" y2="550" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.85" />
+                  <stop offset="60%" stopColor="#38BDF8" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="#BAE6FD" stopOpacity="0.1" />
+                </linearGradient>
+              </defs>
 
-            {/* ------------------------------------------------------ */}
-            {/* RIGHT SIDE: Hero Content & Dual CTA Buttons            */}
-            {/* ------------------------------------------------------ */}
-            <div className="lg:col-span-6 flex flex-col justify-end space-y-4 sm:space-y-5 pb-1">
-              
-              {/* Exact Heading */}
-              <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.4rem] xl:text-[2.65rem] font-bold text-[#0F172A] tracking-tight leading-[1.2]">
-                  Websites &amp; AI chatbots{" "}
-                  <span className="font-serif italic font-normal text-[#0F172A]">
-                    for local businesses.
-                  </span>
-                </h2>
-              </div>
+              {/* Layer 1: Wide background fluid veil */}
+              <path
+                d="M 250 -50 C 450 120 700 80 950 180 L 950 -50 Z"
+                fill="url(#softBackdropGrad)"
+              />
 
-              {/* Exact Description */}
-              <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
-                Live in about a week. Built to turn visitors into calls, bookings, and customers, with hosting, updates, and support handled every month.
-              </p>
+              {/* Layer 2: Major Translucent Ribbon Loop (Orbital arch flowing across upper right) */}
+              <path
+                d="M 450 -50 C 700 30 920 180 900 420 C 880 620 680 600 520 450 C 400 330 380 140 450 -50 Z"
+                fill="url(#primaryWaveGrad)"
+                stroke="url(#edgeStrokeGrad1)"
+                strokeWidth="1.5"
+              />
 
-              {/* Dual CTA Buttons */}
-              <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-                {/* Primary CTA */}
-                <a
-                  href="https://wa.me/918178557544?text=Hello%20Webify%2C%20I%20would%20like%20to%20start%20a%20new%20project%20for%20my%20business."
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold text-xs sm:text-sm shadow-md shadow-slate-900/10 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all"
-                >
-                  <span>Start a Project</span>
-                  <span className="w-5 h-5 rounded-full bg-white/20 text-[#7DD3FC] flex items-center justify-center text-xs group-hover:bg-[#38BDF8] group-hover:text-[#0F172A] group-hover:translate-x-0.5 transition-all">
-                    →
-                  </span>
-                </a>
+              {/* Layer 3: Nested Inner Fold Wave (Multi-layered glass translucency) */}
+              <path
+                d="M 540 40 C 740 90 910 220 860 440 C 820 560 670 540 560 410 C 480 310 470 170 540 40 Z"
+                fill="url(#innerWaveGrad)"
+                stroke="url(#edgeStrokeGrad2)"
+                strokeWidth="1.2"
+              />
 
-                {/* Secondary CTA */}
-                <a
-                  href="#our-work"
-                  className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/80 hover:bg-white text-[#0F172A] border border-slate-300/80 hover:border-slate-400 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
-                >
-                  <span>See Our Work</span>
-                </a>
-              </div>
+              {/* Layer 4: Sweeping lower contour arcs */}
+              <path
+                d="M 220 460 C 420 320 680 340 920 520"
+                fill="none"
+                stroke="rgba(255, 255, 255, 0.85)"
+                strokeWidth="1.75"
+              />
+              <path
+                d="M 280 500 C 460 380 720 400 950 560"
+                fill="none"
+                stroke="rgba(56, 189, 248, 0.35)"
+                strokeWidth="1"
+                strokeDasharray="4 4"
+              />
 
-            </div>
-
+              {/* Layer 5: Subtle upper orbital whisper line */}
+              <path
+                d="M 380 120 C 580 40 820 120 920 280"
+                fill="none"
+                stroke="rgba(255, 255, 255, 0.6)"
+                strokeWidth="1"
+              />
+            </svg>
           </div>
-        </div>
 
-        {/* Ambient bottom divider line */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto pt-4 border-t border-slate-200/60" />
+          {/* ====================================================== */}
+          {/* Central Hero Composition (Balanced Baseline Alignment) */}
+          {/* ====================================================== */}
+          <motion.div 
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-10 w-full max-w-7xl mx-auto my-auto py-2 sm:py-4"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+              
+              {/* ---------------------------------------------------- */}
+              {/* LEFT SIDE: Brand Typography ("Webify" - Clean Anchor)*/}
+              {/* ---------------------------------------------------- */}
+              <div className="lg:col-span-5 flex flex-col justify-end select-none">
+                <div className="relative">
+                  <h1 className="relative font-brand text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] font-extrabold tracking-[-0.04em] text-[#0F172A] leading-[0.88] transition-all">
+                    Webify
+                  </h1>
+                </div>
+              </div>
 
-      </section>
+              {/* ---------------------------------------------------- */}
+              {/* RIGHT SIDE: Hero Content & Dual CTA Buttons          */}
+              {/* ---------------------------------------------------- */}
+              <div className="lg:col-span-7 flex flex-col justify-end space-y-4 sm:space-y-5 pb-1">
+                
+                {/* Main Heading */}
+                <div className="space-y-2">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-[3.1rem] font-bold text-[#0F172A] tracking-tight leading-[1.15]">
+                    Websites &amp; AI chatbots{" "}
+                    <br className="hidden sm:inline" />
+                    <span className="font-serif italic font-normal text-[#0284C7]">
+                      for local businesses.
+                    </span>
+                  </h2>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
+                  Live in about a week. Built to turn visitors into calls, bookings, and customers, with hosting, updates, and support handled every month.
+                </p>
+
+                {/* Dual CTA Buttons (Matching Reference Design) */}
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+                  {/* Primary CTA: Glowing Rich Blue Pill Button */}
+                  <a
+                    href="https://wa.me/918178557544?text=Hello%20Webify%2C%20I%20would%20like%20to%20start%20a%20new%20project%20for%20my%20business."
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#0284C7] to-[#2563EB] hover:from-[#0369A1] hover:to-[#1D4ED8] text-white font-semibold text-xs sm:text-sm shadow-[0_8px_24px_rgba(2,132,199,0.35)] hover:shadow-[0_12px_28px_rgba(2,132,199,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  >
+                    <span>Start a Project</span>
+                    <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+
+                  {/* Secondary CTA: Clean White/Translucent Pill Button */}
+                  <a
+                    href="#our-work"
+                    className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-white/90 hover:bg-white text-[#0F172A] border border-slate-200/90 hover:border-slate-300 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  >
+                    <span>See Our Work</span>
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+          </motion.div>
+
+          {/* ====================================================== */}
+          {/* Subtle bottom divider & presence line                   */}
+          {/* ====================================================== */}
+          <div className="relative z-10 w-full max-w-7xl mx-auto pt-3 border-t border-slate-200/60 flex flex-col sm:flex-row items-center justify-between text-xs text-[#94A3B8] gap-2">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="font-medium text-[#64748B]">Ready for New Projects</span>
+              <span className="text-slate-300">•</span>
+              <span>Rapid ~5 Days Deployment</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-4 text-[#94A3B8]">
+              <span>Ahmedabad</span>
+              <span>•</span>
+              <span>Surat</span>
+              <span>•</span>
+              <span>Mumbai</span>
+              <span>•</span>
+              <span>Pan-India</span>
+            </div>
+          </div>
+
+        </section>
+      </div>
 
       {/* ======================================================== */}
       {/* 2. ABOUT SECTION (Fits Cleanly Within 100vh + Tech Track) */}
