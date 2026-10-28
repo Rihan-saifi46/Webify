@@ -26,7 +26,7 @@ export default function HomePage() {
       {/* 1. HERO SECTION (100vh Premium Canvas Design Reference)  */}
       {/* ======================================================== */}
       <div className="p-2 sm:p-3.5 lg:p-4.5 bg-[#EAEEF4]">
-        <section className="relative h-[calc(100vh-1rem)] sm:h-[calc(100vh-1.75rem)] lg:h-[calc(100vh-2.25rem)] min-h-[620px] max-h-[100dvh] rounded-[22px] sm:rounded-[30px] lg:rounded-[36px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F6FC] border border-slate-200/80 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.06)] flex flex-col justify-between pt-20 sm:pt-24 lg:pt-28 pb-5 sm:pb-7 px-6 sm:px-10 lg:px-16 overflow-hidden z-10">
+        <section className="relative h-auto min-h-[calc(100dvh-1rem)] sm:min-h-[calc(100dvh-1.75rem)] lg:h-[calc(100vh-2.25rem)] lg:max-h-[100dvh] rounded-[22px] sm:rounded-[30px] lg:rounded-[36px] bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F6FC] border border-slate-200/80 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.06)] flex flex-col justify-between pt-20 sm:pt-24 lg:pt-28 pb-5 sm:pb-6 px-5 sm:px-10 lg:px-16 overflow-hidden z-10">
           
           {/* ====================================================== */}
           {/* Soft Abstract Fluid Curves & Ambient Lighting          */}
@@ -145,7 +145,7 @@ export default function HomePage() {
               {/* ---------------------------------------------------- */}
               <div className="lg:col-span-5 flex flex-col justify-end select-none">
                 <div className="relative">
-                  <h1 className="relative font-brand text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] font-extrabold tracking-[-0.04em] text-[#0F172A] leading-[0.88] transition-all">
+                  <h1 className="relative font-brand text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.75rem] font-extrabold tracking-[-0.04em] text-[#0F172A] leading-[0.9] transition-all">
                     Webify
                   </h1>
                 </div>
@@ -154,11 +154,11 @@ export default function HomePage() {
               {/* ---------------------------------------------------- */}
               {/* RIGHT SIDE: Hero Content & Dual CTA Buttons          */}
               {/* ---------------------------------------------------- */}
-              <div className="lg:col-span-7 flex flex-col justify-end space-y-4 sm:space-y-5 pb-1">
+              <div className="lg:col-span-7 flex flex-col justify-end space-y-3.5 sm:space-y-4 lg:space-y-5 pb-1">
                 
                 {/* Main Heading */}
                 <div className="space-y-2">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-[3.1rem] font-bold text-[#0F172A] tracking-tight leading-[1.15]">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.4rem] xl:text-[2.9rem] font-bold text-[#0F172A] tracking-tight leading-[1.18]">
                     Websites &amp; AI chatbots{" "}
                     <br className="hidden sm:inline" />
                     <span className="font-serif italic font-normal text-[#0284C7]">
