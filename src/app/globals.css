@@ -12,6 +12,10 @@
     --muted-grey: #64748B;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: #F8FAFC;
     color: #0F172A;

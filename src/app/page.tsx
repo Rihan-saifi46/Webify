@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import { 
   ArrowRight, 
@@ -20,20 +20,8 @@ import {
 } from "lucide-react";
 
 export default function HomePage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Scroll tracking for page transition animation
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  // Smooth subtle scale down and dimming of Hero as Section 2 slides over it
-  const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0.4]);
-
   return (
-    <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#7DD3FC]/30 selection:text-[#0F172A] overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#7DD3FC]/30 selection:text-[#0F172A] overflow-x-hidden snap-y snap-proximity">
       
       {/* ======================================================== */}
       {/* 1. TOP NAVBAR                                            */}
@@ -41,165 +29,156 @@ export default function HomePage() {
       <Navbar />
 
       {/* ======================================================== */}
-      {/* STACKED TRANSITION CONTAINER (Hero + Section 2)          */}
+      {/* 1. HERO SECTION (Exactly 100vh Full Viewport Height)      */}
       {/* ======================================================== */}
-      <div ref={containerRef} className="relative">
+      <section className="relative h-screen min-h-[100dvh] max-h-[100dvh] flex flex-col justify-between pt-20 sm:pt-24 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-14 overflow-hidden z-10 bg-[#F8FAFC] snap-start snap-always">
+        
+        {/* Soft Ambient Hero Background (Original Sky Blue & Slate Theme) */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Subtle architectural dot grid */}
+          <div className="absolute inset-0 bg-grid-pattern opacity-40" />
 
-        {/* ======================================================== */}
-        {/* HERO SECTION (Exactly 100vh Full Viewport Height)        */}
-        {/* ======================================================== */}
-        <section className="sticky top-0 h-screen min-h-[100dvh] max-h-[100dvh] flex flex-col justify-between pt-20 sm:pt-24 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-14 overflow-hidden z-10 bg-[#F8FAFC]">
-          
-          <motion.div 
-            style={{ scale: heroScale, opacity: heroOpacity }}
-            className="w-full h-full flex flex-col justify-between"
+          {/* Soft ambient sky-blue radial glow top right */}
+          <div className="absolute -top-24 right-0 w-[550px] sm:w-[700px] h-[550px] sm:h-[700px] bg-gradient-to-bl from-[#BAE6FD]/40 via-[#E0F2FE]/30 to-transparent rounded-full blur-3xl animate-ambient-glow" />
+
+          {/* Gentle secondary light glow bottom left behind brand typography */}
+          <div className="absolute bottom-0 left-[-10%] w-[500px] h-[400px] bg-gradient-to-tr from-[#7DD3FC]/20 via-[#38BDF8]/10 to-transparent rounded-full blur-3xl" />
+
+          {/* Minimal vector accent curve (Modern SaaS / Architectural aesthetic) */}
+          <svg 
+            className="absolute top-1/4 right-0 w-full max-w-4xl h-[420px] stroke-[#38BDF8]/20 fill-none opacity-60" 
+            viewBox="0 0 800 400" 
+            xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Soft Ambient Hero Background (Original Sky Blue & Slate Theme) */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              {/* Subtle architectural dot grid */}
-              <div className="absolute inset-0 bg-grid-pattern opacity-40" />
+            <path 
+              d="M0,200 C300,120 450,280 800,160" 
+              strokeWidth="1.5" 
+              strokeDasharray="6 6"
+            />
+            <path 
+              d="M0,240 C320,160 480,320 800,200" 
+              strokeWidth="1" 
+              strokeOpacity="0.6"
+            />
+          </svg>
+        </div>
 
-              {/* Soft ambient sky-blue radial glow top right */}
-              <div className="absolute -top-24 right-0 w-[550px] sm:w-[700px] h-[550px] sm:h-[700px] bg-gradient-to-bl from-[#BAE6FD]/40 via-[#E0F2FE]/30 to-transparent rounded-full blur-3xl animate-ambient-glow" />
+        {/* Central Hero Composition (Balanced Baseline Alignment) */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto my-auto py-2 sm:py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+            
+            {/* ------------------------------------------------------ */}
+            {/* LEFT SIDE: Brand Typography ("Webify" - Clean Anchor)  */}
+            {/* ------------------------------------------------------ */}
+            <div className="lg:col-span-6 flex flex-col justify-end select-none">
+              <div className="relative">
+                {/* Subtle soft backdrop accent */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-sky-100/30 to-transparent rounded-3xl blur-2xl pointer-events-none" />
 
-              {/* Gentle secondary light glow bottom left behind brand typography */}
-              <div className="absolute bottom-0 left-[-10%] w-[500px] h-[400px] bg-gradient-to-tr from-[#7DD3FC]/20 via-[#38BDF8]/10 to-transparent rounded-full blur-3xl" />
-
-              {/* Minimal vector accent curve (Modern SaaS / Architectural aesthetic) */}
-              <svg 
-                className="absolute top-1/4 right-0 w-full max-w-4xl h-[420px] stroke-[#38BDF8]/20 fill-none opacity-60" 
-                viewBox="0 0 800 400" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path 
-                  d="M0,200 C300,120 450,280 800,160" 
-                  strokeWidth="1.5" 
-                  strokeDasharray="6 6"
-                />
-                <path 
-                  d="M0,240 C320,160 480,320 800,200" 
-                  strokeWidth="1" 
-                  strokeOpacity="0.6"
-                />
-              </svg>
-            </div>
-
-            {/* Central Hero Composition (Balanced Baseline Alignment) */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto my-auto py-2 sm:py-4">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-                
-                {/* ------------------------------------------------------ */}
-                {/* LEFT SIDE: Brand Typography ("Webify" - No Dot)        */}
-                {/* ------------------------------------------------------ */}
-                <div className="lg:col-span-6 flex flex-col justify-end select-none">
-                  <div className="relative">
-                    {/* Subtle soft backdrop accent */}
-                    <div className="absolute -inset-4 bg-gradient-to-r from-sky-100/30 to-transparent rounded-3xl blur-2xl pointer-events-none" />
-
-                    <h1 className="relative font-brand text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[8.5rem] font-extrabold tracking-[-0.04em] text-[#0F172A] leading-[0.88] transition-all">
-                      Webify
-                    </h1>
-                  </div>
-                </div>
-
-                {/* ------------------------------------------------------ */}
-                {/* RIGHT SIDE: Hero Content & Dual CTA Buttons            */}
-                {/* ------------------------------------------------------ */}
-                <div className="lg:col-span-6 flex flex-col justify-end space-y-4 sm:space-y-5 pb-1">
-                  
-                  {/* Exact Heading */}
-                  <div className="space-y-2">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.4rem] xl:text-[2.65rem] font-bold text-[#0F172A] tracking-tight leading-[1.2]">
-                      Websites &amp; AI chatbots{" "}
-                      <span className="font-serif italic font-normal text-[#0F172A]">
-                        for local businesses.
-                      </span>
-                    </h2>
-                  </div>
-
-                  {/* Exact Description */}
-                  <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
-                    Live in about a week. Built to turn visitors into calls, bookings, and customers, with hosting, updates, and support handled every month.
-                  </p>
-
-                  {/* Dual CTA Buttons */}
-                  <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-                    {/* Primary CTA */}
-                    <a
-                      href="https://wa.me/918178557544?text=Hello%20Webify%2C%20I%20would%20like%20to%20start%20a%20new%20project%20for%20my%20business."
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold text-xs sm:text-sm shadow-md shadow-slate-900/10 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all"
-                    >
-                      <span>Start a Project</span>
-                      <span className="w-5 h-5 rounded-full bg-white/20 text-[#7DD3FC] flex items-center justify-center text-xs group-hover:bg-[#38BDF8] group-hover:text-[#0F172A] group-hover:translate-x-0.5 transition-all">
-                        →
-                      </span>
-                    </a>
-
-                    {/* Secondary CTA */}
-                    <a
-                      href="#our-work"
-                      className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/80 hover:bg-white text-[#0F172A] border border-slate-300/80 hover:border-slate-400 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
-                    >
-                      <span>See Our Work</span>
-                    </a>
-                  </div>
-
-                </div>
-
+                <h1 className="relative font-brand text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[8.5rem] font-extrabold tracking-[-0.04em] text-[#0F172A] leading-[0.88] transition-all">
+                  Webify
+                </h1>
               </div>
             </div>
 
-            {/* Ambient bottom divider line */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto pt-4 border-t border-slate-200/60" />
-          </motion.div>
+            {/* ------------------------------------------------------ */}
+            {/* RIGHT SIDE: Hero Content & Dual CTA Buttons            */}
+            {/* ------------------------------------------------------ */}
+            <div className="lg:col-span-6 flex flex-col justify-end space-y-4 sm:space-y-5 pb-1">
+              
+              {/* Exact Heading */}
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.4rem] xl:text-[2.65rem] font-bold text-[#0F172A] tracking-tight leading-[1.2]">
+                  Websites &amp; AI chatbots{" "}
+                  <span className="font-serif italic font-normal text-[#0F172A]">
+                    for local businesses.
+                  </span>
+                </h2>
+              </div>
 
-        </section>
+              {/* Exact Description */}
+              <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
+                Live in about a week. Built to turn visitors into calls, bookings, and customers, with hosting, updates, and support handled every month.
+              </p>
 
-        {/* ======================================================== */}
-        {/* 2. SECOND SECTION (Slide-Over Card Sheet Transition)     */}
-        {/* ======================================================== */}
-        <section className="relative z-20 min-h-screen bg-white rounded-t-[2.5rem] sm:rounded-t-[3.5rem] lg:rounded-t-[4rem] border-t border-slate-200/90 shadow-[0_-25px_60px_-15px_rgba(15,23,42,0.08)] flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 py-20 sm:py-32 overflow-hidden">
-          
-          {/* Subtle Ambient Background inside Section 2 */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[550px] bg-gradient-to-tr from-[#E0F2FE]/40 via-[#BAE6FD]/20 to-transparent rounded-full blur-3xl pointer-events-none" />
-          </div>
+              {/* Dual CTA Buttons */}
+              <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+                {/* Primary CTA */}
+                <a
+                  href="https://wa.me/918178557544?text=Hello%20Webify%2C%20I%20would%20like%20to%20start%20a%20new%20project%20for%20my%20business."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#0F172A] hover:bg-[#1E293B] text-white font-semibold text-xs sm:text-sm shadow-md shadow-slate-900/10 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all"
+                >
+                  <span>Start a Project</span>
+                  <span className="w-5 h-5 rounded-full bg-white/20 text-[#7DD3FC] flex items-center justify-center text-xs group-hover:bg-[#38BDF8] group-hover:text-[#0F172A] group-hover:translate-x-0.5 transition-all">
+                    →
+                  </span>
+                </a>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 max-w-5xl mx-auto text-center space-y-6 sm:space-y-8"
-          >
-            {/* Small Label at Top */}
-            <div className="inline-block">
-              <span className="text-[11px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[#64748B] uppercase">
-                FOR LOCAL BUSINESSES
-              </span>
+                {/* Secondary CTA */}
+                <a
+                  href="#overview"
+                  className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/80 hover:bg-white text-[#0F172A] border border-slate-300/80 hover:border-slate-400 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
+                >
+                  <span>See Our Work</span>
+                </a>
+              </div>
+
             </div>
 
-            {/* Large Visually Dominant Heading */}
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.75rem] font-medium sm:font-semibold text-[#0F172A] tracking-tight leading-[1.14] max-w-5xl mx-auto">
-              Lunex builds{" "}
-              <span className="font-serif italic font-normal text-[#0F172A]">
-                websites and AI chatbots
-              </span>{" "}
-              for small businesses across all industries, helping them attract customers, streamline operations, and grow their businesses.
-            </h2>
+          </div>
+        </div>
 
-            {/* Supporting Paragraph */}
-            <p className="text-sm sm:text-base md:text-lg text-[#64748B] leading-relaxed max-w-2xl mx-auto pt-2 sm:pt-4 font-normal">
-              Most small business websites are slow, outdated, or hard to use on a phone, and that costs you customers. Lunex builds fast, clean websites that make it easy for people to call, book, or buy, then keeps them running so you don't have to think about it.
-            </p>
-          </motion.div>
+        {/* Ambient bottom divider line */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto pt-4 border-t border-slate-200/60" />
 
-        </section>
+      </section>
 
-      </div>
+      {/* ======================================================== */}
+      {/* 2. SECOND SECTION (Fits Completely Within 100vh)        */}
+      {/* ======================================================== */}
+      <section 
+        id="overview"
+        className="relative z-20 h-screen min-h-[100dvh] max-h-[100dvh] bg-white rounded-t-[2.5rem] sm:rounded-t-[3.5rem] lg:rounded-t-[4rem] border-t border-slate-200/90 shadow-[0_-20px_50px_-10px_rgba(15,23,42,0.06)] flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 py-8 sm:py-12 overflow-hidden snap-start snap-always"
+      >
+        
+        {/* Subtle Ambient Background inside Section 2 */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-25" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[550px] bg-gradient-to-tr from-[#E0F2FE]/40 via-[#BAE6FD]/20 to-transparent rounded-full blur-3xl pointer-events-none" />
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.35 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 lg:space-y-7"
+        >
+          {/* Top Label */}
+          <div className="inline-block">
+            <span className="text-[11px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[#64748B] uppercase">
+              FOR LOCAL BUSINESSES
+            </span>
+          </div>
+
+          {/* Balanced Responsive Heading (Webify builds...) */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-[2.95rem] font-medium sm:font-semibold text-[#0F172A] tracking-tight leading-[1.22] sm:leading-[1.25] max-w-4xl mx-auto">
+            Webify builds{" "}
+            <span className="font-serif italic font-normal text-[#0F172A]">
+              websites and AI chatbots
+            </span>{" "}
+            for small businesses across all industries, helping them attract customers, streamline operations, and grow their businesses.
+          </h2>
+
+          {/* Supporting Paragraph */}
+          <p className="text-xs sm:text-sm md:text-base text-[#64748B] leading-relaxed max-w-2xl mx-auto font-normal">
+            Most small business websites are slow, outdated, or hard to use on a phone, and that costs you customers. Webify builds fast, clean websites that make it easy for people to call, book, or buy, then keeps them running so you don't have to think about it.
+          </p>
+        </motion.div>
+
+      </section>
 
       {/* ======================================================== */}
       {/* 3. KEY METRICS STRIP (Crisp Glassmorphism Cards)        */}
