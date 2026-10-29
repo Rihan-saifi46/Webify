@@ -2,34 +2,50 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowUpRight, Sparkles, MessageSquare } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isPastHero, setIsPastHero] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 15);
+      // Disappear when scrolling down past the 100vh Home Page
+      const heroThreshold = window.innerHeight * 0.72;
+      setIsPastHero(window.scrollY > heroThreshold);
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Only active on the Home Page root ("/")
+  const isHomePage = pathname === "/";
+
+  // If not on Home Page, or if scrolled past the 100vh Hero, hide navbar completely
+  const shouldHide = !isHomePage || isPastHero;
+
   const navLinks = [
     { name: "Services", href: "#services" },
-    { name: "Our Work", href: "#our-work" },
+    { name: "Projects", href: "#our-work" },
     { name: "CRM & Extension", href: "#crm-extension" },
     { name: "WhatsApp Chatbot", href: "#whatsapp-chatbot" },
   ];
 
   return (
     <>
-      <header className="fixed top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-8 pointer-events-none transition-all duration-300">
+      <header 
+        className={`fixed top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-8 pointer-events-none transition-all duration-300 ease-out ${
+          shouldHide ? "opacity-0 -translate-y-6 pointer-events-none" : "opacity-100 translate-y-0"
+        }`}
+      >
         <div className="w-full max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
           
           {/* ========================================================= */}
-          {/* LEFT: Webify Logo / Brand Anchor                          */}
+          {/* LEFT: Webify Logo / Brand Anchor (Visible on Home Page)   */}
           {/* ========================================================= */}
           <div className="flex-1 flex items-center justify-start">
             <Link 
@@ -54,6 +70,7 @@ export default function Navbar() {
 
           {/* ========================================================= */}
           {/* CENTER: Rounded Pill Glassmorphism Navigation Container   */}
+          {/* (Not globally sticky, only visible on Home Page)          */}
           {/* ========================================================= */}
           <div className="hidden lg:flex items-center justify-center">
             <nav className="glass-pill px-2.5 py-1.5 rounded-full flex items-center gap-1 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.06)] border border-slate-200/90 hover:border-slate-300 transition-all">
@@ -101,7 +118,7 @@ export default function Navbar() {
       {/* ========================================================= */}
       {/* MOBILE / TABLET DRAWER OVERLAY                            */}
       {/* ========================================================= */}
-      {isOpen && (
+      {isOpen && !shouldHide && (
         <div className="fixed inset-0 z-40 lg:hidden flex flex-col justify-start pt-24 px-4 bg-slate-900/40 backdrop-blur-md animate-in fade-in duration-200">
           <div className="glass-card rounded-3xl p-6 border border-slate-200 shadow-2xl space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -143,4 +160,3 @@ export default function Navbar() {
     </>
   );
 }
-

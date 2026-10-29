@@ -4,6 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
+import TechCarousel from "../components/TechCarousel";
+import ProjectsShowcase from "../components/ProjectsShowcase";
 import { 
   ArrowRight, 
   ArrowUpRight, 
@@ -11,27 +13,23 @@ import {
   MessageSquare, 
   Smartphone, 
   Database, 
-  Layers, 
   Sparkles, 
-  ShieldCheck, 
-  Clock, 
-  Zap, 
-  ExternalLink 
+  Zap 
 } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#7DD3FC]/30 selection:text-[#0F172A] overflow-x-hidden snap-y snap-proximity">
+    <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#7DD3FC]/30 selection:text-[#0F172A] overflow-x-hidden">
       
       {/* ======================================================== */}
-      {/* 1. TOP NAVBAR                                            */}
+      {/* 1. TOP NAVBAR (Sticky ONLY on Home Page)                 */}
       {/* ======================================================== */}
       <Navbar />
 
       {/* ======================================================== */}
       {/* 1. HERO SECTION (Exactly 100vh Full Viewport Height)      */}
       {/* ======================================================== */}
-      <section className="relative h-screen min-h-[100dvh] max-h-[100dvh] flex flex-col justify-between pt-20 sm:pt-24 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-14 overflow-hidden z-10 bg-[#F8FAFC] snap-start snap-always">
+      <section className="relative h-screen min-h-[100dvh] max-h-[100dvh] flex flex-col justify-between pt-20 sm:pt-24 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-14 overflow-hidden z-10 bg-[#F8FAFC]">
         
         {/* Soft Ambient Hero Background (Original Sky Blue & Slate Theme) */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -118,7 +116,7 @@ export default function HomePage() {
 
                 {/* Secondary CTA */}
                 <a
-                  href="#overview"
+                  href="#our-work"
                   className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/80 hover:bg-white text-[#0F172A] border border-slate-300/80 hover:border-slate-400 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
                 >
                   <span>See Our Work</span>
@@ -136,25 +134,26 @@ export default function HomePage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 2. SECOND SECTION (Fits Completely Within 100vh)        */}
+      {/* 2. ABOUT SECTION (Fits Cleanly Within 100vh + Tech Track) */}
       {/* ======================================================== */}
       <section 
-        id="overview"
-        className="relative z-20 h-screen min-h-[100dvh] max-h-[100dvh] bg-white rounded-t-[2.5rem] sm:rounded-t-[3.5rem] lg:rounded-t-[4rem] border-t border-slate-200/90 shadow-[0_-20px_50px_-10px_rgba(15,23,42,0.06)] flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 py-8 sm:py-12 overflow-hidden snap-start snap-always"
+        id="about"
+        className="relative z-20 min-h-screen bg-white rounded-t-[2.5rem] sm:rounded-t-[3.5rem] lg:rounded-t-[4rem] border-t border-slate-200/90 shadow-[0_-20px_50px_-10px_rgba(15,23,42,0.06)] flex flex-col justify-between items-center px-4 sm:px-8 lg:px-16 pt-16 sm:pt-24 pb-8 sm:pb-12 overflow-hidden"
       >
         
-        {/* Subtle Ambient Background inside Section 2 */}
+        {/* Subtle Ambient Background inside About section */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-25" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[550px] bg-gradient-to-tr from-[#E0F2FE]/40 via-[#BAE6FD]/20 to-transparent rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[550px] bg-gradient-to-tr from-[#E0F2FE]/40 via-[#BAE6FD]/20 to-transparent rounded-full blur-3xl pointer-events-none" />
         </div>
 
+        {/* Main Centered Content */}
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.35 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 lg:space-y-7"
+          className="relative z-10 max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 lg:space-y-7 my-auto py-8 sm:py-12"
         >
           {/* Top Label */}
           <div className="inline-block">
@@ -178,58 +177,34 @@ export default function HomePage() {
           </p>
         </motion.div>
 
-      </section>
-
-      {/* ======================================================== */}
-      {/* 3. KEY METRICS STRIP (Crisp Glassmorphism Cards)        */}
-      {/* ======================================================== */}
-      <section className="relative z-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto my-16 sm:my-24">
-        <div className="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-[0_12px_36px_-12px_rgba(15,23,42,0.06)]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/80">
-            
-            {/* Metric 1 */}
-            <div className="space-y-1 sm:pr-6">
-              <p className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-brand tracking-tight">22+</p>
-              <p className="text-xs text-[#64748B] uppercase tracking-wider font-semibold">Live Client Websites</p>
-              <p className="text-[11px] text-[#0284C7] font-medium">Deployed & Google Maps Ranked</p>
-            </div>
-
-            {/* Metric 2 */}
-            <div className="space-y-1 pt-4 sm:pt-0 sm:px-6">
-              <p className="text-3xl sm:text-4xl font-extrabold text-[#0284C7] font-brand tracking-tight">100k+</p>
-              <p className="text-xs text-[#64748B] uppercase tracking-wider font-semibold">Automated WA Messages</p>
-              <p className="text-[11px] text-[#0F172A]/70">Zero Server Latency</p>
-            </div>
-
-            {/* Metric 3 */}
-            <div className="space-y-1 pt-4 sm:pt-0 sm:px-6">
-              <p className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-brand tracking-tight">5 Days</p>
-              <p className="text-xs text-[#64748B] uppercase tracking-wider font-semibold">Fast Production Launch</p>
-              <p className="text-[11px] text-[#0284C7] font-medium">48-Hour Live Prototype</p>
-            </div>
-
-            {/* Metric 4 */}
-            <div className="space-y-1 pt-4 sm:pt-0 sm:pl-6">
-              <p className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-brand tracking-tight">100%</p>
-              <p className="text-xs text-[#64748B] uppercase tracking-wider font-semibold">Code & Domain Ownership</p>
-              <p className="text-[11px] text-[#0F172A]/70">No Lock-in Fees</p>
-            </div>
-
-          </div>
+        {/* ====================================================== */}
+        {/* Continuous Technologies Carousel (End of About Page)   */}
+        {/* ====================================================== */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto pt-6 border-t border-slate-100 flex flex-col items-center gap-3">
+          <span className="text-[11px] font-mono tracking-widest text-[#94A3B8] uppercase">
+            Technologies &amp; Platforms We Master
+          </span>
+          <TechCarousel />
         </div>
+
       </section>
+
+      {/* ======================================================== */}
+      {/* 3. PROJECTS SHOWCASE (Directly Below Tech Carousel)      */}
+      {/* ======================================================== */}
+      <ProjectsShowcase />
 
       {/* ======================================================== */}
       {/* 4. CORE SERVICES PREVIEW SECTION (#services)             */}
       {/* ======================================================== */}
-      <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+      <section id="services" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0284C7] bg-[#E0F2FE] border border-[#BAE6FD]">
             <Sparkles className="w-3.5 h-3.5 text-[#0284C7]" />
             <span>Digital Capabilities</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-            Everything You Need to Modernize & Grow
+            Everything You Need to Modernize &amp; Grow
           </h2>
           <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
             Tailored digital solutions engineered specifically for retailers, manufacturers, clinics, and local enterprises.
@@ -251,7 +226,7 @@ export default function HomePage() {
             <ul className="space-y-2 text-xs text-[#0F172A] pt-4 border-t border-slate-100">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Next.js App Router & Tailwind CSS</span>
+                <span>Next.js App Router &amp; Tailwind CSS</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
@@ -259,7 +234,7 @@ export default function HomePage() {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Domain & Cloud Hosting Included</span>
+                <span>Domain &amp; Cloud Hosting Included</span>
               </li>
             </ul>
           </div>
@@ -282,7 +257,7 @@ export default function HomePage() {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Digital Catalog & PDF Delivery</span>
+                <span>Digital Catalog &amp; PDF Delivery</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
@@ -297,7 +272,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#0284C7] flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Database className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-[#0F172A]">Custom CRM & ERP Software</h3>
+              <h3 className="text-xl font-bold text-[#0F172A]">Custom CRM &amp; ERP Software</h3>
               <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
                 Bespoke operations software with automated GST billing, live stock tracking, customer records, and staff management.
               </p>
@@ -309,7 +284,7 @@ export default function HomePage() {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
-                <span>Real-Time Inventory & Stock Audit</span>
+                <span>Real-Time Inventory &amp; Stock Audit</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0284C7] shrink-0" />
@@ -321,124 +296,9 @@ export default function HomePage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 5. FEATURED CLIENT WORK PREVIEW (#our-work)              */}
+      {/* 5. WHATSAPP & CRM FEATURE HIGHLIGHT (#crm-extension)     */}
       {/* ======================================================== */}
-      <section id="our-work" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0284C7] bg-[#E0F2FE] border border-[#BAE6FD]">
-              <Layers className="w-3.5 h-3.5 text-[#0284C7]" />
-              <span>Proven Results</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-              Real Systems Built & Delivered
-            </h2>
-            <p className="text-sm sm:text-base text-[#64748B]">
-              Explore live platforms built for jewellery houses, industrial manufacturers, and B2B clients.
-            </p>
-          </div>
-          <a
-            href="https://wa.me/918178557544?text=Hello%20Webify%2C%20I%20would%20like%20to%20view%20more%20portfolio%20case%20studies."
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0284C7] hover:text-[#0F172A] transition-colors"
-          >
-            <span>Request Full 22+ Case Studies</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {/* Project 1 */}
-          <div className="glass-card rounded-3xl p-6 border border-slate-200/90 hover:border-[#38BDF8]/60 transition-all hover:shadow-lg space-y-5">
-            <div className="flex items-center justify-between">
-              <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#E0F2FE] text-[#0284C7]">
-                Retail & Jewellery
-              </span>
-              <span className="text-xs text-[#64748B]">2024</span>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-[#0F172A]">Swastik Jewel</h3>
-              <p className="text-xs sm:text-sm text-[#64748B] mt-1.5 line-clamp-2">
-                Digital luxury jewellery storefront featuring live bullion rates, bridal lookbooks, and 1-tap WhatsApp inquiries.
-              </p>
-            </div>
-            <div className="pt-2 flex items-center justify-between border-t border-slate-100">
-              <span className="text-xs font-semibold text-[#0284C7]">4.8x Walk-in Inquiries</span>
-              <a 
-                href="https://www.swastikjewel.in/" 
-                target="_blank" 
-                rel="noreferrer"
-                className="p-2 rounded-full hover:bg-slate-100 text-[#0F172A] transition-colors"
-                title="Visit Live Client Website"
-              >
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Project 2 */}
-          <div className="glass-card rounded-3xl p-6 border border-slate-200/90 hover:border-[#38BDF8]/60 transition-all hover:shadow-lg space-y-5">
-            <div className="flex items-center justify-between">
-              <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#E0F2FE] text-[#0284C7]">
-                B2B & Enterprise ERP
-              </span>
-              <span className="text-xs text-[#64748B]">2024</span>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-[#0F172A]">Swastik Operations CRM</h3>
-              <p className="text-xs sm:text-sm text-[#64748B] mt-1.5 line-clamp-2">
-                Full operations suite managing diamond carat pricing, automated WhatsApp GST invoice delivery, and stock audits.
-              </p>
-            </div>
-            <div className="pt-2 flex items-center justify-between border-t border-slate-100">
-              <span className="text-xs font-semibold text-[#0284C7]">100% Automated Invoicing</span>
-              <a 
-                href="https://crm.swastikjewel.in/admin/dashboard" 
-                target="_blank" 
-                rel="noreferrer"
-                className="p-2 rounded-full hover:bg-slate-100 text-[#0F172A] transition-colors"
-                title="Visit Live System"
-              >
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Project 3 */}
-          <div className="glass-card rounded-3xl p-6 border border-slate-200/90 hover:border-[#38BDF8]/60 transition-all hover:shadow-lg space-y-5">
-            <div className="flex items-center justify-between">
-              <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#E0F2FE] text-[#0284C7]">
-                Industrial & Metals
-              </span>
-              <span className="text-xs text-[#64748B]">2024</span>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-[#0F172A]">RK Steel Company</h3>
-              <p className="text-xs sm:text-sm text-[#64748B] mt-1.5 line-clamp-2">
-                Industrial steel supplies, structural beams, and custom metal fabrication portal built for B2B tenders and quotes.
-              </p>
-            </div>
-            <div className="pt-2 flex items-center justify-between border-t border-slate-100">
-              <span className="text-xs font-semibold text-[#0284C7]">Direct B2B Steel Tenders</span>
-              <a 
-                href="https://www.rksteelcompany.in/" 
-                target="_blank" 
-                rel="noreferrer"
-                className="p-2 rounded-full hover:bg-slate-100 text-[#0F172A] transition-colors"
-                title="Visit Live Client Website"
-              >
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================== */}
-      {/* 6. WHATSAPP & CRM FEATURE HIGHLIGHT (#crm-extension)     */}
-      {/* ======================================================== */}
-      <section id="crm-extension" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="crm-extension" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div id="whatsapp-chatbot" className="glass-card rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-xl relative overflow-hidden">
           
           {/* Subtle sky background accent */}
@@ -502,7 +362,7 @@ export default function HomePage() {
                     I need a modern website and WhatsApp automated booking.
                   </div>
                   <div className="p-3 rounded-2xl rounded-tl-none bg-slate-100 text-[#0F172A] max-w-[85%] space-y-2">
-                    <p>Awesome! We launch high-converting websites in ~5 days with full domain & source code ownership.</p>
+                    <p>Awesome! We launch high-converting websites in ~5 days with full domain &amp; source code ownership.</p>
                     <p className="text-[11px] font-semibold text-[#0284C7]">Would you like to review our client portfolio?</p>
                   </div>
                 </div>
@@ -514,7 +374,7 @@ export default function HomePage() {
       </section>
 
       {/* ======================================================== */}
-      {/* 7. MINIMAL FOOTER                                        */}
+      {/* 6. MINIMAL FOOTER                                        */}
       {/* ======================================================== */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-200 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -525,8 +385,8 @@ export default function HomePage() {
 
           <div className="flex items-center gap-6 text-xs text-[#64748B]">
             <a href="#services" className="hover:text-[#0F172A] transition-colors">Services</a>
-            <a href="#our-work" className="hover:text-[#0F172A] transition-colors">Our Work</a>
-            <a href="#crm-extension" className="hover:text-[#0F172A] transition-colors">CRM & Extension</a>
+            <a href="#our-work" className="hover:text-[#0F172A] transition-colors">Projects</a>
+            <a href="#crm-extension" className="hover:text-[#0F172A] transition-colors">CRM &amp; Extension</a>
             <a href="#whatsapp-chatbot" className="hover:text-[#0F172A] transition-colors">WhatsApp Chatbot</a>
           </div>
 
