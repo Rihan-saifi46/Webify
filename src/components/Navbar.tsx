@@ -44,11 +44,10 @@ export default function Navbar() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#7DD3FC] ml-0.5 animate-pulse" />
               </div>
               
-              <div className="flex items-baseline gap-1.5">
+              <div className="flex items-baseline">
                 <span className="font-brand font-extrabold text-xl sm:text-2xl tracking-tight text-[#0F172A] group-hover:text-[#0284C7] transition-colors">
                   Webify
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
               </div>
             </Link>
           </div>
@@ -144,3 +143,4 @@ export default function Navbar() {
     </>
   );
 }
+
