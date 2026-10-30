@@ -76,12 +76,12 @@ export default function WhatsAppChatbotSection() {
       {/* ======================================================== */}
       {/* Main Two-Column Layout (Fit Within 100vh on Desktop)      */}
       {/* ======================================================== */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center my-auto w-full">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto w-full">
         
         {/* ------------------------------------------------------ */}
         {/* LEFT COLUMN: Header, Description, 2x2 Features, CTA    */}
         {/* ------------------------------------------------------ */}
-        <div className="lg:col-span-6 xl:col-span-6 space-y-4 xl:space-y-5">
+        <div className="lg:col-span-6 xl:col-span-6 space-y-3.5 sm:space-y-4">
           
           {/* Top Pill Badge */}
           <div className="inline-block">
@@ -92,8 +92,8 @@ export default function WhatsAppChatbotSection() {
           </div>
 
           {/* Main Dominant Heading */}
-          <div className="space-y-1.5">
-            <h2 className="text-2xl sm:text-3xl lg:text-[1.95rem] xl:text-[2.35rem] 2xl:text-[2.5rem] font-extrabold text-[#0F172A] tracking-tight leading-[1.12]">
+          <div className="space-y-1">
+            <h2 className="text-2xl sm:text-3xl lg:text-[1.95rem] xl:text-[2.35rem] 2xl:text-[2.5rem] font-extrabold text-[#0F172A] tracking-tight leading-[1.14]">
               Turn Every WhatsApp <br className="hidden sm:inline" />
               Inquiry into a <br />
               <span className="font-serif italic font-normal text-[#0284C7]">
@@ -155,67 +155,66 @@ export default function WhatsAppChatbotSection() {
         <div className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center py-4 lg:py-2">
           
           {/* Subtle Ambient Radial Backlight */}
-          <div className="absolute w-[300px] sm:w-[380px] h-[300px] sm:h-[380px] bg-gradient-to-br from-[#BAE6FD]/40 via-[#E0F2FE]/30 to-transparent rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute w-[300px] sm:w-[350px] h-[300px] sm:h-[350px] bg-gradient-to-br from-[#BAE6FD]/40 via-[#E0F2FE]/30 to-transparent rounded-full blur-2xl pointer-events-none" />
 
-          {/* Floating Analytics Mini-Cards Around Mockup (Desktop / Tablet) */}
-          
-          {/* 1. Floating WhatsApp Badge (Top Left) */}
-          <div className="absolute -top-2 left-2 sm:left-4 z-20 hidden sm:flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200/90 shadow-md shadow-emerald-500/10">
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 fill-[#25D366]" viewBox="0 0 24 24">
-              <path d="M12.031 2c-5.508 0-9.986 4.471-9.986 9.974 0 1.764.464 3.486 1.346 5.013l-1.428 5.213 5.342-1.4c1.474.805 3.134 1.229 4.826 1.229 5.508 0 9.985-4.471 9.985-9.975 0-5.503-4.477-9.974-9.985-9.974zm5.794 14.113c-.244.685-1.421 1.312-1.956 1.38-.517.066-1.189.094-1.922-.141-.444-.143-1.018-.332-1.761-.653-3.117-1.353-5.143-4.526-5.3-4.733-.155-.208-1.268-1.688-1.268-3.22 0-1.533.805-2.287 1.09-2.585.285-.298.625-.373.834-.373.208 0 .416.002.599.011.193.009.452-.073.707.539.263.633.9 2.203.978 2.363.078.16.131.348.026.557-.104.208-.157.339-.312.52-.155.18-.328.403-.468.541-.155.155-.317.324-.136.634.181.311.808 1.334 1.733 2.158 1.19 1.06 2.193 1.389 2.504 1.545.311.155.493.13.676-.078.181-.208.777-.905.984-1.216.208-.311.415-.26.696-.155.281.104 1.782.84 2.089.995.307.155.512.234.588.364.076.13.076.753-.168 1.438z"/>
-            </svg>
-          </div>
-
-          {/* 2. Floating Leads Card (Mid Left) */}
-          <div className="absolute top-1/4 -left-3 sm:-left-6 z-20 hidden sm:flex flex-col items-center justify-center p-2 sm:p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-lg shadow-slate-900/5 min-w-[72px] sm:min-w-[80px] select-none hover:scale-105 transition-transform">
-            <BarChart3 className="w-4 h-4 text-[#0284C7]" />
-            <span className="text-[9.5px] font-semibold text-[#64748B] mt-0.5">Leads</span>
-            <span className="text-xs font-extrabold text-emerald-600 tracking-tight">+240%</span>
-          </div>
-
-          {/* 3. Floating Bookings Card (Top Right) */}
-          <div className="absolute top-6 -right-2 sm:-right-5 z-20 hidden sm:flex flex-col items-center justify-center p-2 sm:p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-lg shadow-slate-900/5 min-w-[72px] sm:min-w-[80px] select-none hover:scale-105 transition-transform">
-            <Calendar className="w-4 h-4 text-[#0284C7]" />
-            <span className="text-[9.5px] font-semibold text-[#64748B] mt-0.5">Bookings</span>
-            <span className="text-xs font-extrabold text-emerald-600 tracking-tight">+180%</span>
-          </div>
-
-          {/* 4. Floating Customers Card (Mid-Bottom Right) */}
-          <div className="absolute bottom-12 -right-2 sm:-right-5 z-20 hidden sm:flex flex-col items-center justify-center p-2 sm:p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-lg shadow-slate-900/5 min-w-[72px] sm:min-w-[80px] select-none hover:scale-105 transition-transform">
-            <Users className="w-4 h-4 text-[#0284C7]" />
-            <span className="text-[9.5px] font-semibold text-[#64748B] mt-0.5">Customers</span>
-            <span className="text-xs font-extrabold text-emerald-600 tracking-tight">+3x</span>
-          </div>
-
-          {/* ==================================================== */}
-          {/* Main Scaled WhatsApp Chatbot Mockup Window           */}
-          {/* ==================================================== */}
-          <div className="relative z-10 w-full max-w-[340px] sm:max-w-[365px] xl:max-w-[385px] rounded-2xl sm:rounded-[24px] bg-white border border-slate-200/90 shadow-[0_15px_40px_-10px_rgba(15,23,42,0.1)] overflow-hidden flex flex-col justify-between">
+          {/* Unified Compact Mockup + Surrounding Floating Elements Wrapper */}
+          <div className="relative w-full max-w-[320px] sm:max-w-[350px] xl:max-w-[365px]">
             
-            {/* Mockup Header */}
-            <div className="px-4 py-2.5 sm:py-3 border-b border-slate-100 flex items-center justify-between bg-white select-none">
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center font-bold text-[11px] shadow-xs">
-                  WA
-                </div>
-                <div>
-                  <h4 className="text-xs sm:text-[13px] font-bold text-[#0F172A] tracking-tight">
-                    Webify Bot Assistant
-                  </h4>
-                  <div className="flex items-center gap-1 mt-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-[9px] sm:text-[10px] text-emerald-600 font-medium">Online 24/7</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-slate-400 hover:text-slate-600 transition-colors p-0.5">
-                <MoreVertical className="w-3.5 h-3.5" />
-              </div>
+            {/* 1. Floating WhatsApp Badge (Tightly hugging top-left corner of mockup) */}
+            <div className="absolute -top-3 -left-3 sm:-top-3.5 sm:-left-3.5 z-20 flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white border border-slate-200/90 shadow-md shadow-emerald-500/10">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-[#25D366]" viewBox="0 0 24 24">
+                <path d="M12.031 2c-5.508 0-9.986 4.471-9.986 9.974 0 1.764.464 3.486 1.346 5.013l-1.428 5.213 5.342-1.4c1.474.805 3.134 1.229 4.826 1.229 5.508 0 9.985-4.471 9.985-9.975 0-5.503-4.477-9.974-9.985-9.974zm5.794 14.113c-.244.685-1.421 1.312-1.956 1.38-.517.066-1.189.094-1.922-.141-.444-.143-1.018-.332-1.761-.653-3.117-1.353-5.143-4.526-5.3-4.733-.155-.208-1.268-1.688-1.268-3.22 0-1.533.805-2.287 1.09-2.585.285-.298.625-.373.834-.373.208 0 .416.002.599.011.193.009.452-.073.707.539.263.633.9 2.203.978 2.363.078.16.131.348.026.557-.104.208-.157.339-.312.52-.155.18-.328.403-.468.541-.155.155-.317.324-.136.634.181.311.808 1.334 1.733 2.158 1.19 1.06 2.193 1.389 2.504 1.545.311.155.493.13.676-.078.181-.208.777-.905.984-1.216.208-.311.415-.26.696-.155.281.104 1.782.84 2.089.995.307.155.512.234.588.364.076.13.076.753-.168 1.438z"/>
+              </svg>
             </div>
 
-            {/* Mockup Chat Body */}
-            <div className="p-3 sm:p-3.5 space-y-2.5 bg-[#FAFBFD] min-h-[250px] sm:min-h-[270px] flex flex-col justify-start">
+            {/* 2. Floating Leads Card (Tightly hugging mid-left edge of mockup) */}
+            <div className="absolute top-[28%] -left-6 sm:-left-8 z-20 hidden sm:flex flex-col items-center justify-center py-1.5 px-2.5 sm:py-2 sm:px-3 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md shadow-slate-900/5 select-none hover:scale-105 transition-transform">
+              <BarChart3 className="w-3.5 h-3.5 text-[#0284C7]" />
+              <span className="text-[9px] font-semibold text-[#64748B] mt-0.5">Leads</span>
+              <span className="text-[11px] sm:text-xs font-extrabold text-emerald-600 tracking-tight">+240%</span>
+            </div>
+
+            {/* 3. Floating Bookings Card (Tightly hugging top-right edge of mockup) */}
+            <div className="absolute top-6 -right-6 sm:-right-8 z-20 hidden sm:flex flex-col items-center justify-center py-1.5 px-2.5 sm:py-2 sm:px-3 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md shadow-slate-900/5 select-none hover:scale-105 transition-transform">
+              <Calendar className="w-3.5 h-3.5 text-[#0284C7]" />
+              <span className="text-[9px] font-semibold text-[#64748B] mt-0.5">Bookings</span>
+              <span className="text-[11px] sm:text-xs font-extrabold text-emerald-600 tracking-tight">+180%</span>
+            </div>
+
+            {/* 4. Floating Customers Card (Tightly hugging bottom-right edge of mockup) */}
+            <div className="absolute bottom-8 -right-6 sm:-right-8 z-20 hidden sm:flex flex-col items-center justify-center py-1.5 px-2.5 sm:py-2 sm:px-3 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md shadow-slate-900/5 select-none hover:scale-105 transition-transform">
+              <Users className="w-3.5 h-3.5 text-[#0284C7]" />
+              <span className="text-[9px] font-semibold text-[#64748B] mt-0.5">Customers</span>
+              <span className="text-[11px] sm:text-xs font-extrabold text-emerald-600 tracking-tight">+3x</span>
+            </div>
+
+            {/* Main Scaled WhatsApp Chatbot Mockup Window */}
+            <div className="relative z-10 w-full rounded-2xl sm:rounded-[22px] bg-white border border-slate-200/90 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.08)] overflow-hidden flex flex-col justify-between">
+              
+              {/* Mockup Header */}
+              <div className="px-3.5 py-2.5 border-b border-slate-100 flex items-center justify-between bg-white select-none">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-full bg-[#25D366] text-white flex items-center justify-center font-bold text-[11px] shadow-xs">
+                    WA
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-[#0F172A] tracking-tight">
+                      Webify Bot Assistant
+                    </h4>
+                    <div className="flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className="text-[9px] text-emerald-600 font-medium">Online 24/7</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-slate-400 hover:text-slate-600 transition-colors p-0.5">
+                  <MoreVertical className="w-3.5 h-3.5" />
+                </div>
+              </div>
+
+              {/* Mockup Chat Body */}
+              <div className="p-3 space-y-2 bg-[#FAFBFD] min-h-[240px] sm:min-h-[255px] flex flex-col justify-start">
               
               {/* Message 1: Bot Welcome */}
               <div className="flex flex-col items-start max-w-[88%]">
