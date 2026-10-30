@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="relative z-30 w-full flex items-center justify-between py-1 sm:py-2 select-none">
+      <header className="relative z-30 w-full flex items-center justify-between py-0 select-none">
         
         {/* ========================================================= */}
         {/* LEFT: Unified Frosted Capsule Pill (Matching Reference)    */}
