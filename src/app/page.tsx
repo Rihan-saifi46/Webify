@@ -167,26 +167,8 @@ export default function HomePage() {
           </div>
         </motion.div>
 
-        {/* ====================================================== */}
-        {/* Subtle bottom divider & presence line (Matching Img 2) */}
-        {/* ====================================================== */}
-        <div className="relative z-10 w-full pt-4 border-t border-slate-200/60 flex flex-col sm:flex-row items-center justify-between text-xs text-[#94A3B8] gap-2 select-none">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-medium text-[#64748B]">Ready for New Projects</span>
-            <span className="text-slate-300">•</span>
-            <span>Rapid ~5 Days Deployment</span>
-          </div>
-          <div className="hidden sm:flex items-center gap-4 text-[#94A3B8]">
-            <span>Ahmedabad</span>
-            <span>•</span>
-            <span>Surat</span>
-            <span>•</span>
-            <span>Mumbai</span>
-            <span>•</span>
-            <span>Pan-India</span>
-          </div>
-        </div>
+        {/* Bottom spacing anchor to keep hero content beautifully centered */}
+        <div className="relative z-10 w-full select-none pointer-events-none" />
 
       </section>
 
