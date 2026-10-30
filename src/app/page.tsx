@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* ======================================================== */}
       {/* 1. HERO SECTION (Full Viewport Width, Flush Edges)       */}
       {/* ======================================================== */}
-      <section className="relative w-full min-h-screen lg:h-screen min-h-[620px] bg-gradient-to-b from-[#FFFFFF] via-[#F9FBFE] to-[#EDF5FC] flex flex-col justify-between p-6 sm:p-10 lg:p-12 xl:px-16 overflow-hidden z-10">
+      <section className="relative w-full min-h-screen lg:h-screen min-h-[600px] bg-gradient-to-b from-[#FFFFFF] via-[#F9FBFE] to-[#EDF5FC] flex flex-col justify-between pt-3 sm:pt-4 lg:pt-5 pb-8 sm:pb-12 lg:pb-14 px-5 sm:px-8 lg:px-12 xl:px-16 overflow-hidden z-10">
 
         {/* ====================================================== */}
         {/* Navbar (Contained Inside Canvas Card at Top)           */}
@@ -30,11 +30,11 @@ export default function HomePage() {
         {/* ====================================================== */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
           {/* Ambient soft blue atmospheric depth glow in upper-right */}
-          <div className="absolute -top-12 -right-12 w-[600px] h-[600px] bg-gradient-to-bl from-[#38BDF8]/20 via-[#93C5FD]/15 to-transparent rounded-full blur-[110px] pointer-events-none" />
+          <div className="absolute top-10 sm:top-14 lg:top-16 -right-12 w-[600px] h-[600px] bg-gradient-to-bl from-[#38BDF8]/20 via-[#93C5FD]/15 to-transparent rounded-full blur-[110px] pointer-events-none" />
 
-          {/* Dimensional Fluid Silk Waves SVG */}
+          {/* Dimensional Fluid Silk Waves SVG (Shifted downward)    */}
           <svg
-            className="absolute top-0 right-0 w-[85%] sm:w-[75%] lg:w-[65%] xl:w-[58%] h-full pointer-events-none"
+            className="absolute top-12 sm:top-16 lg:top-20 right-0 w-[85%] sm:w-[75%] lg:w-[65%] xl:w-[58%] h-[82%] sm:h-[84%] lg:h-[86%] pointer-events-none"
             viewBox="0 0 900 800"
             preserveAspectRatio="xMaxYMid slice"
             fill="none"
